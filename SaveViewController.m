@@ -40,11 +40,11 @@
         int i=0;
         for(i=0;i<[itens count];i++){
             if( [[(Movie*)[itens objectAtIndex:i] imdbID] isEqualToString:_movie.imdbID]){
-                [itens removeObjectAtIndex:i];
                 break;
             }
         }
         if(i==[itens count]){
+            [itens addObject:_movie];
             [_saveLoad Save:itens];
         }
     }];
