@@ -26,9 +26,12 @@ static Movie* selected;
     _cell = [[Cell alloc] init];
     _tableView.rowHeight = UITableViewAutomaticDimension;
     
+    [_loadingIndicator setHidden:YES];
+    [_loadingIndicator startAnimating];
 //    if it received a word for first search, will do the search and update the table
     [_connection requestByName:_searchWord : ^(NSMutableArray * movie){
         _itens = movie;
+        [_loadingIndicator stopAnimating];
         [_tableView reloadData];
     }];
 }

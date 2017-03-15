@@ -17,4 +17,6 @@
 @property (strong, nonatomic) NSMutableArray * itens;
 @property (strong, nonatomic) Cell * cell;
 
+@property (weak, nonatomic) IBOutlet UIActivityIndicatorView *loadingIndicator;
+
 @end
