@@ -12,6 +12,7 @@
 		E534FED11E69FDED004BB969 /* MovieView.m in Sources */ = {isa = PBXBuildFile; fileRef = E534FED01E69FDED004BB969 /* MovieView.m */; };
 		E55665421E798F5200C0A6AF /* MovieViewSimplex.xib in Resources */ = {isa = PBXBuildFile; fileRef = E55665411E798F5200C0A6AF /* MovieViewSimplex.xib */; };
 		E55665461E798FAD00C0A6AF /* MovieViewSimplex.m in Sources */ = {isa = PBXBuildFile; fileRef = E55665451E798FAD00C0A6AF /* MovieViewSimplex.m */; };
+		E55665481E79BE3300C0A6AF /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E55665471E79BE3300C0A6AF /* Default-568h@2x.png */; };
 		E55A552D1E7700EC00484A6B /* SaveLoad.m in Sources */ = {isa = PBXBuildFile; fileRef = E55A552C1E7700EC00484A6B /* SaveLoad.m */; };
 		E56D25F61E71AF7700F16AC9 /* not_found.jpg in Resources */ = {isa = PBXBuildFile; fileRef = E56D25F51E71AF7700F16AC9 /* not_found.jpg */; };
 		E57595C61E7857BC003EE397 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E57595C41E7857BC003EE397 /* Main.storyboard */; };
@@ -42,6 +43,7 @@
 		E55665411E798F5200C0A6AF /* MovieViewSimplex.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MovieViewSimplex.xib; sourceTree = "<group>"; };
 		E55665441E798FAD00C0A6AF /* MovieViewSimplex.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MovieViewSimplex.h; sourceTree = "<group>"; };
 		E55665451E798FAD00C0A6AF /* MovieViewSimplex.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MovieViewSimplex.m; sourceTree = "<group>"; };
+		E55665471E79BE3300C0A6AF /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		E55A552B1E7700EC00484A6B /* SaveLoad.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SaveLoad.h; path = IOSZup/SaveLoad.h; sourceTree = "<group>"; };
 		E55A552C1E7700EC00484A6B /* SaveLoad.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SaveLoad.m; path = IOSZup/SaveLoad.m; sourceTree = "<group>"; };
 		E56D25F51E71AF7700F16AC9 /* not_found.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = not_found.jpg; sourceTree = "<group>"; };
@@ -188,6 +190,7 @@
 		E5AA879F1E68797B0078A292 = {
 			isa = PBXGroup;
 			children = (
+				E55665471E79BE3300C0A6AF /* Default-568h@2x.png */,
 				E5AA87AA1E68797B0078A292 /* IOSZup */,
 				E5AA87A91E68797B0078A292 /* Products */,
 				C24CB7F9DAFF5FB7E2FFAF99 /* Pods */,
@@ -302,6 +305,7 @@
 				E55665421E798F5200C0A6AF /* MovieViewSimplex.xib in Resources */,
 				E57595C61E7857BC003EE397 /* Main.storyboard in Resources */,
 				E58098231E731AB200556A94 /* MovieViewComplex.xib in Resources */,
+				E55665481E79BE3300C0A6AF /* Default-568h@2x.png in Resources */,
 				E534FECC1E69FCAA004BB969 /* MovieView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
