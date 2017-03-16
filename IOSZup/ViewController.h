@@ -11,7 +11,7 @@
 #import "Cell.h"
 #import "Movie.h"
 #import "Connection.h"
-#import "ResultsTableViewController.h"
+#import "SaveViewController.h"
 #import "ResultsTableViewController2.h"
 #import "DescriptionViewController.h"
 #import "SaveLoad.h"
@@ -28,7 +28,11 @@
 @property (strong, nonatomic) Cell * cell;
 
 @property (strong,nonatomic) SaveLoad * saveLoad;
+    
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *topCarouselConstraint;
 
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *bottonCarouselConstraint;
+    
 -(void)addItens:(NSMutableArray*) i;
 
 -(void)addMovie:(Movie*)m;

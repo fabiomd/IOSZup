@@ -19,5 +19,8 @@
 
 @property (weak, nonatomic) IBOutlet UIView *myView;
 @property (weak, nonatomic) IBOutlet UIButton *deleteButton;
+    
+@property (strong,nonatomic) UIView * verticalVersion;
+@property (strong,nonatomic) UIView * horizontalVersion;
 
 @end

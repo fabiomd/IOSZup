@@ -53,7 +53,10 @@ static Movie* selected;
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
 
     Movie * temp = [_itens objectAtIndex:indexPath.section];
+    MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+    hud.label.text = @"Loading";
     [_connection requestByID:temp.imdbID: ^(Movie * movie){
+        [hud hideAnimated:YES];
         selected = movie;
         [self performSegueWithIdentifier:@"SaveViewController" sender:self];
     }];

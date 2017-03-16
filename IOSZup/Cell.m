@@ -29,5 +29,11 @@
     [Movie fillWithMovie:movie];
     return Movie;
 }
+    
+-(UIView*)GetViewComplex2:(Movie*) movie{
+    MovieViewComplex * Movie = [[[NSBundle mainBundle] loadNibNamed:@"MovieViewComplex2" owner:self options:nil]objectAtIndex:0];
+    [Movie fillWithMovie:movie];
+    return Movie;
+}
 
 @end

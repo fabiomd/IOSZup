@@ -18,15 +18,60 @@
     [super viewDidLoad];
     
     Cell * tempCell = [[Cell alloc]init];
-    [_myView addSubview:[tempCell GetViewComplex: _movie]];
-    
+    _verticalVersion = [tempCell GetViewComplex: _movie];
+    _horizontalVersion = [tempCell GetViewComplex2: _movie];
+    if (UIDeviceOrientationIsLandscape([UIDevice currentDevice].orientation)){
+        [_verticalVersion setHidden:YES];
+        [_horizontalVersion setHidden:NO];
+    }else{
+        [_horizontalVersion setHidden:YES];
+        [_verticalVersion setHidden:NO];
+    }
+    CGRect frame;
+    if(![_horizontalVersion isHidden]){
+        frame = _horizontalVersion.frame;
+    }else{
+        frame = _verticalVersion.frame;
+    }
+    frame.size.height = _myView.frame.size.height;
+    frame.size.width = _myView.frame.size.width;
+    if(![_horizontalVersion isHidden]){
+        _horizontalVersion.frame = frame;
+    }else{
+        _verticalVersion.frame = frame;
+    }
+    [_myView addSubview:_horizontalVersion];
+    [_myView addSubview:_verticalVersion];
     _saveLoad = [[SaveLoad alloc]init];
-    //[self.view addSubview:[tempCell GetViewComplex: _movie]];
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+    
+-(void) viewWillTransitionToSize:(CGSize)size withTransitionCoordinator:(id<UIViewControllerTransitionCoordinator>)coordinator{
+    [super viewWillTransitionToSize:size withTransitionCoordinator:coordinator];
+    if (UIDeviceOrientationIsLandscape([UIDevice currentDevice].orientation)){
+        [_verticalVersion setHidden:YES];
+        [_horizontalVersion setHidden:NO];
+    }else{
+        [_horizontalVersion setHidden:YES];
+        [_verticalVersion setHidden:NO];
+    }
+    CGRect frame;
+    if(![_horizontalVersion isHidden]){
+        frame = _horizontalVersion.frame;
+    }else{
+        frame = _verticalVersion.frame;
+    }
+    frame.size.height = _myView.frame.size.height;
+    frame.size.width = _myView.frame.size.width;
+    if(![_horizontalVersion isHidden]){
+        _horizontalVersion.frame = frame;
+    }else{
+        _verticalVersion.frame = frame;
+    }
 }
 
 - (IBAction)deleteButtonWasPressed:(id)sender {

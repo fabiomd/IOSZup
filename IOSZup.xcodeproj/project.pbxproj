@@ -14,6 +14,7 @@
 		E55665461E798FAD00C0A6AF /* MovieViewSimplex.m in Sources */ = {isa = PBXBuildFile; fileRef = E55665451E798FAD00C0A6AF /* MovieViewSimplex.m */; };
 		E55665481E79BE3300C0A6AF /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E55665471E79BE3300C0A6AF /* Default-568h@2x.png */; };
 		E55A552D1E7700EC00484A6B /* SaveLoad.m in Sources */ = {isa = PBXBuildFile; fileRef = E55A552C1E7700EC00484A6B /* SaveLoad.m */; };
+		E55C84781E7B286C00CA5981 /* MovieViewComplex2.xib in Resources */ = {isa = PBXBuildFile; fileRef = E55C84771E7B286C00CA5981 /* MovieViewComplex2.xib */; };
 		E56D25F61E71AF7700F16AC9 /* not_found.jpg in Resources */ = {isa = PBXBuildFile; fileRef = E56D25F51E71AF7700F16AC9 /* not_found.jpg */; };
 		E57595C61E7857BC003EE397 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E57595C41E7857BC003EE397 /* Main.storyboard */; };
 		E57595C91E785E00003EE397 /* DescriptionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E57595C81E785E00003EE397 /* DescriptionViewController.m */; };
@@ -23,7 +24,6 @@
 		E58098211E73196F00556A94 /* MovieViewComplex.m in Sources */ = {isa = PBXBuildFile; fileRef = E58098201E73196F00556A94 /* MovieViewComplex.m */; };
 		E58098231E731AB200556A94 /* MovieViewComplex.xib in Resources */ = {isa = PBXBuildFile; fileRef = E58098221E731AB200556A94 /* MovieViewComplex.xib */; };
 		E58098261E731D5A00556A94 /* SaveViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E58098251E731D5A00556A94 /* SaveViewController.m */; };
-		E580982C1E7333EB00556A94 /* ResultsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E580982B1E7333EB00556A94 /* ResultsTableViewController.m */; };
 		E5AA87AD1E68797B0078A292 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = E5AA87AC1E68797B0078A292 /* main.m */; };
 		E5AA87B01E68797B0078A292 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = E5AA87AF1E68797B0078A292 /* AppDelegate.m */; };
 		E5AA87B91E68797B0078A292 /* IOSZup.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = E5AA87B71E68797B0078A292 /* IOSZup.xcdatamodeld */; };
@@ -46,6 +46,7 @@
 		E55665471E79BE3300C0A6AF /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		E55A552B1E7700EC00484A6B /* SaveLoad.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SaveLoad.h; path = IOSZup/SaveLoad.h; sourceTree = "<group>"; };
 		E55A552C1E7700EC00484A6B /* SaveLoad.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SaveLoad.m; path = IOSZup/SaveLoad.m; sourceTree = "<group>"; };
+		E55C84771E7B286C00CA5981 /* MovieViewComplex2.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MovieViewComplex2.xib; sourceTree = "<group>"; };
 		E56D25F51E71AF7700F16AC9 /* not_found.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = not_found.jpg; sourceTree = "<group>"; };
 		E57595C51E7857BC003EE397 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = IOSZup/Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		E57595C71E785E00003EE397 /* DescriptionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DescriptionViewController.h; sourceTree = "<group>"; };
@@ -61,8 +62,6 @@
 		E58098221E731AB200556A94 /* MovieViewComplex.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MovieViewComplex.xib; sourceTree = "<group>"; };
 		E58098241E731D5A00556A94 /* SaveViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SaveViewController.h; sourceTree = "<group>"; };
 		E58098251E731D5A00556A94 /* SaveViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SaveViewController.m; sourceTree = "<group>"; };
-		E580982A1E7333EB00556A94 /* ResultsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ResultsTableViewController.h; sourceTree = "<group>"; };
-		E580982B1E7333EB00556A94 /* ResultsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ResultsTableViewController.m; sourceTree = "<group>"; };
 		E5AA87A81E68797B0078A292 /* IOSZup.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = IOSZup.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E5AA87AC1E68797B0078A292 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		E5AA87AE1E68797B0078A292 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -150,16 +149,6 @@
 			path = ..;
 			sourceTree = "<group>";
 		};
-		E57595CD1E788CE3003EE397 /* Test */ = {
-			isa = PBXGroup;
-			children = (
-				E580982A1E7333EB00556A94 /* ResultsTableViewController.h */,
-				E580982B1E7333EB00556A94 /* ResultsTableViewController.m */,
-			);
-			name = Test;
-			path = ..;
-			sourceTree = "<group>";
-		};
 		E58098281E73202300556A94 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
@@ -182,6 +171,7 @@
 				E534FECB1E69FCAA004BB969 /* MovieView.xib */,
 				E55665411E798F5200C0A6AF /* MovieViewSimplex.xib */,
 				E58098221E731AB200556A94 /* MovieViewComplex.xib */,
+				E55C84771E7B286C00CA5981 /* MovieViewComplex2.xib */,
 			);
 			name = XibFiles;
 			path = ..;
@@ -210,7 +200,6 @@
 			isa = PBXGroup;
 			children = (
 				E56D25F51E71AF7700F16AC9 /* not_found.jpg */,
-				E57595CD1E788CE3003EE397 /* Test */,
 				E57595C31E784D42003EE397 /* SaveLoad */,
 				E58098291E73289000556A94 /* XibFiles */,
 				E58098281E73202300556A94 /* ViewControllers */,
@@ -304,6 +293,7 @@
 				E56D25F61E71AF7700F16AC9 /* not_found.jpg in Resources */,
 				E55665421E798F5200C0A6AF /* MovieViewSimplex.xib in Resources */,
 				E57595C61E7857BC003EE397 /* Main.storyboard in Resources */,
+				E55C84781E7B286C00CA5981 /* MovieViewComplex2.xib in Resources */,
 				E58098231E731AB200556A94 /* MovieViewComplex.xib in Resources */,
 				E55665481E79BE3300C0A6AF /* Default-568h@2x.png in Resources */,
 				E534FECC1E69FCAA004BB969 /* MovieView.xib in Resources */,
@@ -380,7 +370,6 @@
 				E5AA87D81E68A6460078A292 /* Cell.m in Sources */,
 				E57595C91E785E00003EE397 /* DescriptionViewController.m in Sources */,
 				E58098261E731D5A00556A94 /* SaveViewController.m in Sources */,
-				E580982C1E7333EB00556A94 /* ResultsTableViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

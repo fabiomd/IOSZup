@@ -30,6 +30,7 @@ static NSInteger selectedIndex = 0;
 //    Set the caousel datasource and delegate
     _CarouselView.dataSource = self;
     _CarouselView.delegate = self;
+//    _CarouselView.clipsToBounds = YES;
     
 //    The carousel type
     _CarouselView.type = iCarouselTypeCoverFlow2;
@@ -63,6 +64,11 @@ static NSInteger selectedIndex = 0;
     [self.CarouselView reloadData];
 }
 
+    
+-(CGFloat)carouselItemWidth:(iCarousel *)carousel{
+    return 200;
+}
+    
 - (NSInteger)numberOfItemsInCarousel:(iCarousel *)carousel {
     return [_itens count];
     //return the number of elements on the carousel
@@ -78,6 +84,11 @@ static NSInteger selectedIndex = 0;
 - (UIView *)carousel:(iCarousel *)carousel viewForItemAtIndex:(NSInteger)index reusingView:(nullable UIView *)view {
 //    allocate a new Cell
     return [_cell GetViewSimplex:[_itens objectAtIndex:index]];
+////    CGRect frame = view.frame;
+////    frame.size.height = _CarouselView.frame.size.height*.5;
+//////    frame.size.width = [_CarouselView itemWidth];
+////    view.frame = frame;
+//    return view;
 }
 
 
@@ -91,12 +102,6 @@ static NSInteger selectedIndex = 0;
     [searchBar resignFirstResponder];
     // Do the search...
     [self CallSearch];
-    
-//    [_connection requestByName:searchBar.text : ^(NSMutableArray * movie){
-//        //[self addItens:movie];
-//        _searchResults = movie;
-//        [self CallSearch];
-//    }];
 }
 
 -(void)CallSearch{
@@ -113,11 +118,6 @@ static NSInteger selectedIndex = 0;
 //In a storyboard-based application, you will often want to do a little preparation before navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     
-//    if ([segue.identifier isEqualToString:@"ResultsTableViewController"]) {
-//        ResultsTableViewController *temp = (ResultsTableViewController *) segue.destinationViewController;
-//        temp.itens = _searchResults;
-//    }
-    
     if ([segue.identifier isEqualToString:@"ResultsTableViewController2"]) {
         ResultsTableViewController2 *temp = (ResultsTableViewController2 *) segue.destinationViewController;
         temp.itens = _searchResults;
@@ -130,6 +130,17 @@ static NSInteger selectedIndex = 0;
     }
 }
 
+-(void) viewWillTransitionToSize:(CGSize)size withTransitionCoordinator:(id<UIViewControllerTransitionCoordinator>)coordinator{
+    [super viewWillTransitionToSize:size withTransitionCoordinator:coordinator];
+    if (UIDeviceOrientationIsLandscape([UIDevice currentDevice].orientation)){
+        _bottonCarouselConstraint.constant = 0;
+        _topCarouselConstraint.constant = 0;
+    }else{
+        _topCarouselConstraint.constant =0;
+        _bottonCarouselConstraint.constant = 200;
+    }
+}
+    
 -(void)loadData{
     [_saveLoad Load:^(NSMutableArray * contentLoaded){
         if(contentLoaded){
