@@ -17,15 +17,18 @@ PODS:
   - Mantle (2.1.0):
     - Mantle/extobjc (= 2.1.0)
   - Mantle/extobjc (2.1.0)
+  - MBProgressHUD (1.0.0)
 
 DEPENDENCIES:
   - AFNetworking (~> 3.0)
   - Mantle (~> 2.1)
+  - MBProgressHUD (~> 1.0.0)
 
 SPEC CHECKSUMS:
   AFNetworking: 5e0e199f73d8626b11e79750991f5d173d1f8b67
   Mantle: 2fa750afa478cd625a94230fbf1c13462f29395b
+  MBProgressHUD: 4890f671c94e8a0f3cf959aa731e9de2f036d71a
 
-PODFILE CHECKSUM: e8151a4dd3fc56b3c4b1ea143a6b386b45b4ad2a
+PODFILE CHECKSUM: 9f36f95b2586f1420ba7e2e61c1287f8e911e138
 
 COCOAPODS: 1.2.0

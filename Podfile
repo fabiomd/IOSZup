@@ -6,6 +6,7 @@ target 'IOSZup' do
   # use_frameworks!
   pod 'AFNetworking', '~> 3.0'
   pod 'Mantle' , '~> 2.1'
+  pod 'MBProgressHUD', '~> 1.0.0'
   # Pods for IOSZup
 
 end

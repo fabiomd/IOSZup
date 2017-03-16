@@ -131,7 +131,7 @@
                                         <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="zlI-8E-VA5" id="GzP-5o-xxx">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </tableViewCellContentView>
                                     </tableViewCell>
@@ -148,25 +148,19 @@
                                     <outlet property="delegate" destination="lNW-Ba-xgk" id="ehQ-tN-SxU"/>
                                 </connections>
                             </searchBar>
-                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="hfc-mH-sAq">
-                                <rect key="frame" x="177" y="144" width="20" height="20"/>
-                            </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="Lkf-sk-paT" firstAttribute="top" secondItem="Zh3-wc-OBj" secondAttribute="topMargin" constant="44" id="8Yg-ep-lwI"/>
                             <constraint firstItem="RGj-R2-prj" firstAttribute="top" secondItem="Rb1-4r-FNe" secondAttribute="bottom" id="AW7-Ma-9CM"/>
-                            <constraint firstItem="RGj-R2-prj" firstAttribute="centerX" secondItem="hfc-mH-sAq" secondAttribute="centerX" id="Agg-cn-uuv"/>
                             <constraint firstItem="Lkf-sk-paT" firstAttribute="leading" secondItem="RGj-R2-prj" secondAttribute="leading" id="DEr-Uc-5uU"/>
                             <constraint firstAttribute="trailing" secondItem="Lkf-sk-paT" secondAttribute="trailing" id="M0z-SQ-hv5"/>
                             <constraint firstItem="Lkf-sk-paT" firstAttribute="bottom" secondItem="MEv-UK-Wa6" secondAttribute="top" id="W7M-Nb-nnY"/>
                             <constraint firstItem="Lkf-sk-paT" firstAttribute="trailing" secondItem="RGj-R2-prj" secondAttribute="trailing" id="ZaJ-XO-8cw"/>
                             <constraint firstItem="Lkf-sk-paT" firstAttribute="leading" secondItem="Zh3-wc-OBj" secondAttribute="leading" id="tJA-zw-mQR"/>
-                            <constraint firstItem="hfc-mH-sAq" firstAttribute="top" secondItem="RGj-R2-prj" secondAttribute="bottom" constant="36" id="wOG-Ba-DkK"/>
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="loadingIndicator" destination="hfc-mH-sAq" id="KmY-Y4-Vzo"/>
                         <outlet property="searchBar" destination="RGj-R2-prj" id="fDV-c5-Hon"/>
                         <outlet property="tableView" destination="Lkf-sk-paT" id="eYz-1Z-dJ1"/>
                         <segue destination="miS-AP-8tu" kind="show" identifier="SaveViewController" id="o1G-yb-M8J"/>

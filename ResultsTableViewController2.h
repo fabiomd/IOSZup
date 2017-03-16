@@ -7,6 +7,7 @@
 //
 
 #import "ViewController.h"
+#import "MBProgressHUD.h"
 
 @interface ResultsTableViewController2 : UIViewController
 
@@ -16,7 +17,5 @@
 @property (strong, nonatomic) NSString * searchWord;
 @property (strong, nonatomic) NSMutableArray * itens;
 @property (strong, nonatomic) Cell * cell;
-
-@property (weak, nonatomic) IBOutlet UIActivityIndicatorView *loadingIndicator;
 
 @end

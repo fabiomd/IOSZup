@@ -26,14 +26,7 @@ static Movie* selected;
     _cell = [[Cell alloc] init];
     _tableView.rowHeight = UITableViewAutomaticDimension;
     
-    [_loadingIndicator setHidden:YES];
-    [_loadingIndicator startAnimating];
-//    if it received a word for first search, will do the search and update the table
-    [_connection requestByName:_searchWord : ^(NSMutableArray * movie){
-        _itens = movie;
-        [_loadingIndicator stopAnimating];
-        [_tableView reloadData];
-    }];
+    [self search:_searchWord];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -53,7 +46,7 @@ static Movie* selected;
 //    define the cell height 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    return [_cell GetView:[_itens objectAtIndex: indexPath.section]].frame.size.height;
+    return 80;
 }
 
 //    if a cell was selected, will get a more detay version of the selected movie, and will call a view to show it
@@ -85,12 +78,21 @@ static Movie* selected;
     [searchBar resignFirstResponder];
     // Do the search...
     
-    [_connection requestByName:searchBar.text : ^(NSMutableArray * movie){
+    [self search:searchBar.text];
+}
+
+- (void)search:(NSString*)searchText{
+    _itens = nil;
+    MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+    hud.label.text = @"Loading";
+    
+    [_connection requestByName:searchText : ^(NSMutableArray * movie){
         _itens = movie;
+        [hud hideAnimated:YES];
         [_tableView reloadData];
     }];
 }
-
+    
 
 #pragma mark - Navigation
 
