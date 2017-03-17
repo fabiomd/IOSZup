@@ -16,11 +16,13 @@ static NSString * const BaseURLString = @"http://www.omdbapi.com";
 
 //    will request a movie to server based on the name passed, this will return a list of NSMutableArray
 
--(void)requestByName:(NSString *)name : (void (^)(NSMutableArray *) )itens{
+-(void)requestByName:(NSString *)name :(int)page itens: (void (^)(NSMutableArray *) )itens{
     
 //    Creating manager for comunication with server
     AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
-
+    
+    
+    name = [self removeAccents:name];
 //    This part will create the requested url, based on name
     NSString * tempURL = @"";
     tempURL = [tempURL stringByAppendingString:BaseURLString];
@@ -33,6 +35,8 @@ static NSString * const BaseURLString = @"http://www.omdbapi.com";
 
     }
     tempURL = [tempURL stringByAppendingString:[subStrings objectAtIndex:i]];
+    tempURL = [tempURL stringByAppendingString:@"&page="];
+    tempURL = [tempURL stringByAppendingString:[NSString stringWithFormat:@"%d", page]];
     
     NSMutableArray * movies = [[NSMutableArray alloc]init];
     
@@ -64,6 +68,7 @@ static NSString * const BaseURLString = @"http://www.omdbapi.com";
 //    Creating manager for comunication with server
     AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
     
+    ID = [self removeAccents:ID];
 //    This part will create the requested url, based on name
     NSString * tempURL = @"";
     tempURL = [tempURL stringByAppendingString:BaseURLString];
@@ -83,6 +88,10 @@ static NSString * const BaseURLString = @"http://www.omdbapi.com";
         } failure:^(NSURLSessionTask *operation, NSError *error) {
             NSLog(@"Error: %@", error);
         }];
+}
+
+-(NSString*)removeAccents:(NSString*) text{
+    return [[NSString alloc] initWithData:[text dataUsingEncoding:NSASCIIStringEncoding allowLossyConversion:YES] encoding:NSASCIIStringEncoding];
 }
 
 @end

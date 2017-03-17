@@ -14,12 +14,22 @@
 
 static Movie* selected;
 
+//more movies available on server
+static BOOL available;
+//already made a request
+static BOOL occupied;
+//next page to be request
+static int nextPage;
+
 @implementation ResultsTableViewController2
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     _connection = [[Connection alloc]init];
-    
+    available = YES;
+    occupied = NO;
+    nextPage = 0;
+    _itens = [[NSMutableArray alloc] init];
 //    set table delegate and datasource
     _tableView.delegate = self;
     _tableView.dataSource = self;
@@ -79,31 +89,62 @@ static Movie* selected;
     
     [cell.contentView addSubview:movieCell];
     
+    if(indexPath.item == ([_itens count] - 1)){
+        NSLog(@"End");
+    }
+    
     return cell;
 }
 
+-(void)scrollViewDidScroll:(UIScrollView *)scrollView
+{
+    CGFloat height = scrollView.frame.size.height;
+    
+    CGFloat contentYoffset = scrollView.contentOffset.y;
+    
+    CGFloat distanceFromBottom = scrollView.contentSize.height - contentYoffset;
+    
+    if(_itens  && available && !occupied && distanceFromBottom < height){
+        [self search:_searchWord];
+    }
+}
 
 //    if serchBar was clicked, will clear the list and make another search
 - (void)searchBarSearchButtonClicked:(UISearchBar *) searchBar
 {
+    _itens = [[NSMutableArray alloc] init];
+    available = YES;
     [searchBar resignFirstResponder];
     // Do the search...
+    _searchWord = searchBar.text;
     
     [self search:searchBar.text];
 }
 
 - (void)search:(NSString*)searchText{
-    _itens = nil;
-    MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
-    hud.label.text = @"Loading";
-    
-    [_connection requestByName:searchText : ^(NSMutableArray * movie){
-        _itens = movie;
-        [hud hideAnimated:YES];
-        [_tableView reloadData];
-    }];
+    if(available){
+        MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+        hud.label.text = @"Loading";
+        nextPage++;
+        occupied = YES;
+        [_connection requestByName:searchText: nextPage itens: ^(NSMutableArray * movie){
+            if([movie count] == 0){
+                available = NO;
+            }else{
+                [self addItens:movie];
+            }
+            [hud hideAnimated:YES];
+            occupied = NO;
+        }];
+    }
 }
-    
+
+-(void)addItens:(NSMutableArray*) array{
+    for(Movie * tempM in array){
+        [_itens addObject:tempM];
+    }
+    [_tableView reloadData];
+}
 
 #pragma mark - Navigation
 

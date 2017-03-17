@@ -14,7 +14,7 @@
 
 @interface Connection : NSObject
 
--(void) requestByName:(NSString*) name : (void (^)(NSMutableArray *) )itens;
+-(void) requestByName:(NSString*) name :(int)page itens: (void (^)(NSMutableArray *) )itens;
 -(void)requestByID:(NSString *)ID : (void (^)(Movie *) )iten;
 
 @end
