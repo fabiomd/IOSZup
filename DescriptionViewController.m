@@ -18,8 +18,12 @@
     [super viewDidLoad];
     
     Cell * tempCell = [[Cell alloc]init];
-    _verticalVersion = [tempCell GetViewComplex: _movie];
-    _horizontalVersion = [tempCell GetViewComplex2: _movie];
+    _verticalVersion = [tempCell GetViewComplexVertical: _movie];
+    _horizontalVersion = [tempCell GetViewComplexHorizontal: _movie];
+    [_displayView addSubview:_horizontalVersion];
+    [_displayView addSubview:_verticalVersion];
+    _verticalVersion.frame = [self getFrameSize:_verticalVersion];
+    _horizontalVersion.frame = [self getFrameSize:_horizontalVersion];
     if (UIDeviceOrientationIsLandscape([UIDevice currentDevice].orientation)){
         [_verticalVersion setHidden:YES];
         [_horizontalVersion setHidden:NO];
@@ -27,21 +31,6 @@
         [_horizontalVersion setHidden:YES];
         [_verticalVersion setHidden:NO];
     }
-    CGRect frame;
-    if(![_horizontalVersion isHidden]){
-        frame = _horizontalVersion.frame;
-    }else{
-        frame = _verticalVersion.frame;
-    }
-    frame.size.height = _myView.frame.size.height;
-    frame.size.width = _myView.frame.size.width;
-    if(![_horizontalVersion isHidden]){
-        _horizontalVersion.frame = frame;
-    }else{
-        _verticalVersion.frame = frame;
-    }
-    [_myView addSubview:_horizontalVersion];
-    [_myView addSubview:_verticalVersion];
     _saveLoad = [[SaveLoad alloc]init];
 }
 
@@ -49,28 +38,24 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
-    
+
+-(CGRect) getFrameSize:(UIView*) view{
+    CGRect frame;
+    frame = view.frame;
+    frame.size.height = _displayView.frame.size.height;
+    frame.size.width = _displayView.frame.size.width;
+    return frame;
+}
+
 -(void) viewWillTransitionToSize:(CGSize)size withTransitionCoordinator:(id<UIViewControllerTransitionCoordinator>)coordinator{
     [super viewWillTransitionToSize:size withTransitionCoordinator:coordinator];
+    
     if (UIDeviceOrientationIsLandscape([UIDevice currentDevice].orientation)){
         [_verticalVersion setHidden:YES];
         [_horizontalVersion setHidden:NO];
     }else{
         [_horizontalVersion setHidden:YES];
         [_verticalVersion setHidden:NO];
-    }
-    CGRect frame;
-    if(![_horizontalVersion isHidden]){
-        frame = _horizontalVersion.frame;
-    }else{
-        frame = _verticalVersion.frame;
-    }
-    frame.size.height = _myView.frame.size.height;
-    frame.size.width = _myView.frame.size.width;
-    if(![_horizontalVersion isHidden]){
-        _horizontalVersion.frame = frame;
-    }else{
-        _verticalVersion.frame = frame;
     }
 }
 

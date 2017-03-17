@@ -18,4 +18,7 @@
 @property (strong,nonatomic) SaveLoad * saveLoad;
 @property (weak, nonatomic) IBOutlet UIView *displayView;
 
+@property (strong,nonatomic) UIView * verticalVersion;
+@property (strong,nonatomic) UIView * horizontalVersion;
+
 @end

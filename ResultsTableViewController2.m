@@ -70,10 +70,18 @@ static Movie* selected;
     // Configure the cell...
     
     UIView * movieCell = [_cell GetView:[_itens objectAtIndex: indexPath.section]];
+    
+    CGRect frame;
+    frame = movieCell.frame;
+    frame.size.height = cell.contentView.frame.size.height;
+    frame.size.width = cell.contentView.frame.size.width;
+    movieCell.frame = frame;
+    
     [cell.contentView addSubview:movieCell];
     
     return cell;
 }
+
 
 //    if serchBar was clicked, will clear the list and make another search
 - (void)searchBarSearchButtonClicked:(UISearchBar *) searchBar

@@ -25,6 +25,8 @@
 
 @property (strong, nonatomic) IBOutlet iCarousel *CarouselView;
 
+@property (weak, nonatomic) IBOutlet UITableView *tableView;
+
 @property (strong, nonatomic) Cell * cell;
 
 @property (strong,nonatomic) SaveLoad * saveLoad;
@@ -32,6 +34,8 @@
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *topCarouselConstraint;
 
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *bottonCarouselConstraint;
+
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *tableHeightConstraint;
     
 -(void)addItens:(NSMutableArray*) i;
 

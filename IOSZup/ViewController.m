@@ -8,7 +8,7 @@
 
 #import "ViewController.h"
 
-@interface ViewController () <iCarouselDataSource, iCarouselDelegate, UIGestureRecognizerDelegate>
+@interface ViewController () <iCarouselDataSource, iCarouselDelegate,UITableViewDelegate , UITableViewDataSource, UIGestureRecognizerDelegate>
 @property (strong, nonatomic) Connection * connection;
 @end
 
@@ -30,7 +30,6 @@ static NSInteger selectedIndex = 0;
 //    Set the caousel datasource and delegate
     _CarouselView.dataSource = self;
     _CarouselView.delegate = self;
-//    _CarouselView.clipsToBounds = YES;
     
 //    The carousel type
     _CarouselView.type = iCarouselTypeCoverFlow2;
@@ -40,6 +39,22 @@ static NSInteger selectedIndex = 0;
     _connection = [[Connection alloc]init];
     _saveLoad = [[SaveLoad alloc] init];
     
+    _tableView.delegate = self;
+    _tableView.dataSource = self;
+    _tableView.rowHeight = UITableViewAutomaticDimension;
+    
+    if (UIDeviceOrientationIsLandscape([UIDevice currentDevice].orientation)){
+        _bottonCarouselConstraint.constant = 0;
+        _topCarouselConstraint.constant = 0;
+        _tableHeightConstraint.constant = 0;
+        [_tableView setHidden:YES];
+    }else{
+        _topCarouselConstraint.constant =0;
+        _bottonCarouselConstraint.constant = 200;
+        _tableHeightConstraint.constant = 184;
+        [_tableView setHidden:NO];
+    }
+    
 //    Uncomment this line down here to clear the database
 //    [_saveLoad ClearDataBase];
 }
@@ -48,6 +63,47 @@ static NSInteger selectedIndex = 0;
     [super didReceiveMemoryWarning];
 }
 
+//    number of cells in table
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
+    return [_itens count];
+}
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+    return 1;
+}
+
+//    define the cell height
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    return 60;
+}
+
+//    if a cell was selected, will get a more detay version of the selected movie, and will call a view to show it
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    
+    //comando para quando clica no carousel
+    [self CallDescription:indexPath.item];
+    
+}
+
+//    create a cell
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Cell" forIndexPath:indexPath];
+    
+    // Configure the cell...
+    
+    UIView * movieCell = [_cell GetView:[_itens objectAtIndex: indexPath.section]];
+    
+    CGRect frame;
+    frame = movieCell.frame;
+    frame.size.height = cell.contentView.frame.size.height;
+    frame.size.width = cell.contentView.frame.size.width;
+    movieCell.frame = frame;
+    
+    [cell.contentView addSubview:movieCell];
+    
+    return cell;
+}
 
 
 -(void)addItens:(NSMutableArray*) i{
@@ -55,13 +111,15 @@ static NSInteger selectedIndex = 0;
         [_itens addObject:tempM];
     }
     [self saveData];
-    [self.CarouselView reloadData];
+    [_CarouselView reloadData];
+    [_tableView reloadData];
 }
 
 -(void)addMovie:(Movie*) m{
     [_itens addObject:m];
     [self saveData];
-    [self.CarouselView reloadData];
+    [_CarouselView reloadData];
+    [_tableView reloadData];
 }
 
     
@@ -84,11 +142,6 @@ static NSInteger selectedIndex = 0;
 - (UIView *)carousel:(iCarousel *)carousel viewForItemAtIndex:(NSInteger)index reusingView:(nullable UIView *)view {
 //    allocate a new Cell
     return [_cell GetViewSimplex:[_itens objectAtIndex:index]];
-////    CGRect frame = view.frame;
-////    frame.size.height = _CarouselView.frame.size.height*.5;
-//////    frame.size.width = [_CarouselView itemWidth];
-////    view.frame = frame;
-//    return view;
 }
 
 
@@ -135,9 +188,13 @@ static NSInteger selectedIndex = 0;
     if (UIDeviceOrientationIsLandscape([UIDevice currentDevice].orientation)){
         _bottonCarouselConstraint.constant = 0;
         _topCarouselConstraint.constant = 0;
+        _tableHeightConstraint.constant = 0;
+        [_tableView setHidden:YES];
     }else{
         _topCarouselConstraint.constant =0;
         _bottonCarouselConstraint.constant = 200;
+        _tableHeightConstraint.constant = 184;
+        [_tableView setHidden:NO];
     }
 }
     
@@ -145,7 +202,8 @@ static NSInteger selectedIndex = 0;
     [_saveLoad Load:^(NSMutableArray * contentLoaded){
         if(contentLoaded){
             _itens = contentLoaded;
-            [self.CarouselView reloadData];
+            [_CarouselView reloadData];
+            [_tableView reloadData];
         }
     }];
 }
