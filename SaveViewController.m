@@ -75,10 +75,22 @@
                 break;
             }
         }
+        UIAlertController * alert;
         if(i==[itens count]){
+            alert=[UIAlertController alertControllerWithTitle:@"" message:@"Filme salvo!"preferredStyle:UIAlertControllerStyleAlert];
             [itens addObject:_movie];
             [_saveLoad Save:itens];
+        }else{
+            alert=[UIAlertController alertControllerWithTitle:@"" message:@"Este filme ja esta salvo!"preferredStyle:UIAlertControllerStyleAlert];
         }
+        UIAlertAction* OKButton = [UIAlertAction
+                                   actionWithTitle:@"OK"
+                                   style:UIAlertActionStyleDefault
+                                   handler:^(UIAlertAction * action)
+                                   {
+                                   }];
+        [alert addAction:OKButton];
+        [self presentViewController:alert animated:YES completion:nil];
     }];
 }
 

@@ -41,8 +41,6 @@
 -(void) fillWithMovie:(Movie *) movie{
     _title.text = movie.title;
     _poster.image = movie.image;
-//    [_poster.layer setCornerRadius:5.0f];
-//    [_poster.layer setBorderWidth:5.0f];
 }
 
 @end

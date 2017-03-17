@@ -61,20 +61,48 @@
 
 - (IBAction)deleteButtonWasPressed:(id)sender {
     
-    [_saveLoad Load:^(NSMutableArray * contentLoaded){
-        NSMutableArray * itens = contentLoaded;
-        if(!itens){
-            itens = [[NSMutableArray alloc] init];
-        }
-        
-        for(int i=0;i<[itens count];i++){
-            if( [[(Movie*)[itens objectAtIndex:i] imdbID] isEqualToString:_movie.imdbID]){
-                [itens removeObjectAtIndex:i];
-                break;
-            }
-        }
-        [_saveLoad Save:itens];
-    }];
+    UIAlertController * alert=[UIAlertController alertControllerWithTitle:@"" message:@"O FILME SERA REMOVIDO, \n DESEJA PROCESSEGUIR?"preferredStyle:UIAlertControllerStyleAlert];
+    
+    UIAlertAction* yesButton = [UIAlertAction actionWithTitle:@"SIM" style:UIAlertActionStyleDefault handler:^(UIAlertAction * action)
+                                {
+                                    [_saveLoad Load:^(NSMutableArray * contentLoaded){
+                                        NSMutableArray * itens = contentLoaded;
+                                        if(!itens){
+                                            itens = [[NSMutableArray alloc] init];
+                                        }
+                                        
+                                        for(int i=0;i<[itens count];i++){
+                                            if( [[(Movie*)[itens objectAtIndex:i] imdbID] isEqualToString:_movie.imdbID]){
+                                                [itens removeObjectAtIndex:i];
+                                                break;
+                                            }
+                                        }
+                                        [_saveLoad Save:itens];
+                                    }];
+                                    
+                                    [self POPUP:@"Filme removido!"];
+                                }];
+    UIAlertAction* cancelButton = [UIAlertAction actionWithTitle:@"CANCELAR" style:UIAlertActionStyleDefault handler:^(UIAlertAction * action)
+                               {
+                                   [self POPUP:@"Operacao abortada!"];
+                               }];
+    
+    [alert addAction:yesButton];
+    [alert addAction:cancelButton];
+    
+    [self presentViewController:alert animated:YES completion:nil];
+}
+
+-(void)POPUP:(NSString*)text{
+    UIAlertController * popup=[UIAlertController alertControllerWithTitle:@"" message:text preferredStyle:UIAlertControllerStyleAlert];
+    UIAlertAction* OKButton = [UIAlertAction
+                               actionWithTitle:@"OK"
+                               style:UIAlertActionStyleDefault
+                               handler:^(UIAlertAction * action)
+                               {
+                               }];
+    [popup addAction:OKButton];
+    [self presentViewController:popup animated:YES completion:nil];
 }
 
 /*

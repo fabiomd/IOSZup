@@ -46,8 +46,6 @@
     _plot.text = movie.plot;
     _language.text = movie.language;
     _poster.image = movie.image;
-//    [_poster.layer setCornerRadius:5.0f];
-//    [_poster.layer setBorderWidth:5.0f];
 }
 
 @end

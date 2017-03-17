@@ -113,7 +113,9 @@ static int nextPage;
 - (void)searchBarSearchButtonClicked:(UISearchBar *) searchBar
 {
     _itens = [[NSMutableArray alloc] init];
+    [_tableView reloadData];
     available = YES;
+    nextPage = 0;
     [searchBar resignFirstResponder];
     // Do the search...
     _searchWord = searchBar.text;
@@ -124,12 +126,19 @@ static int nextPage;
 - (void)search:(NSString*)searchText{
     if(available){
         MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
-        hud.label.text = @"Loading";
+        hud.label.text = @"Buscando";
         nextPage++;
         occupied = YES;
         [_connection requestByName:searchText: nextPage itens: ^(NSMutableArray * movie){
-            if([movie count] == 0){
+            if([movie count] == 0 || !movie){
                 available = NO;
+                if(nextPage == 1){
+                    UIAlertController * alert = [UIAlertController alertControllerWithTitle:@"" message:@"Sem resultados!"preferredStyle:UIAlertControllerStyleAlert];
+                    UIAlertAction* okButton = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:^(UIAlertAction * action)
+                    {}];
+                    [alert addAction:okButton];
+                    [self presentViewController:alert animated:YES completion:nil];
+                }
             }else{
                 [self addItens:movie];
             }

@@ -91,8 +91,14 @@ static NSInteger selectedIndex = 0;
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Cell" forIndexPath:indexPath];
     
     // Configure the cell...
+    UIView * temp = [_cell GetView:[_itens objectAtIndex: indexPath.section]];
     
-    UIView * movieCell = [_cell GetView:[_itens objectAtIndex: indexPath.section]];
+    MovieView * movieCell = (MovieView*)temp;
+    
+    //if theres not image, set a default one
+    if(!movieCell.poster.image){
+        movieCell.poster.image = [UIImage imageNamed:@"not_found.jpg"];
+    }
     
     CGRect frame;
     frame = movieCell.frame;
@@ -141,7 +147,14 @@ static NSInteger selectedIndex = 0;
 
 - (UIView *)carousel:(iCarousel *)carousel viewForItemAtIndex:(NSInteger)index reusingView:(nullable UIView *)view {
 //    allocate a new Cell
-    return [_cell GetViewSimplex:[_itens objectAtIndex:index]];
+    UIView * temp = [_cell GetViewSimplex:[_itens objectAtIndex:index]];
+    MovieViewSimplex * tempView = (MovieViewSimplex*)temp;
+    
+    //if theres not image, set a default one
+    if(!tempView.poster.image){
+        tempView.poster.image = [UIImage imageNamed:@"not_found.jpg"];
+    }
+    return tempView;
 }
 
 
@@ -175,6 +188,7 @@ static NSInteger selectedIndex = 0;
         ResultsTableViewController2 *temp = (ResultsTableViewController2 *) segue.destinationViewController;
         temp.itens = _searchResults;
         temp.searchWord = _searchBar.text;
+        _searchBar.text = @"";
     }
     
     if ([segue.identifier isEqualToString:@"DescriptionViewController"]) {
