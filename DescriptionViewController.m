@@ -80,11 +80,27 @@
                                         [_saveLoad Save:itens];
                                     }];
                                     
-                                    [self POPUP:@"Filme removido!"];
+                                    UIAlertAction* OKButton = [UIAlertAction
+                                                               actionWithTitle:@"OK"
+                                                               style:UIAlertActionStyleDefault
+                                                               handler:^(UIAlertAction * action)
+                                                               {
+                                                                   UINavigationController * tempNav = [self navigationController];
+                                                                   [tempNav popToRootViewControllerAnimated:true];
+                                                               }];
+                                    
+                                    [self POPUP:@"Filme removido!" button:OKButton];
                                 }];
     UIAlertAction* cancelButton = [UIAlertAction actionWithTitle:@"CANCELAR" style:UIAlertActionStyleDefault handler:^(UIAlertAction * action)
                                {
-                                   [self POPUP:@"Operacao abortada!"];
+                                   UIAlertAction* OKButton = [UIAlertAction
+                                                              actionWithTitle:@"OK"
+                                                              style:UIAlertActionStyleDefault
+                                                              handler:^(UIAlertAction * action)
+                                                              {
+                                                              }];
+                                   
+                                   [self POPUP:@"Operacao abortada!" button:OKButton];
                                }];
     
     [alert addAction:yesButton];
@@ -93,15 +109,9 @@
     [self presentViewController:alert animated:YES completion:nil];
 }
 
--(void)POPUP:(NSString*)text{
+-(void)POPUP:(NSString*)text button:(UIAlertAction*) button{
     UIAlertController * popup=[UIAlertController alertControllerWithTitle:@"" message:text preferredStyle:UIAlertControllerStyleAlert];
-    UIAlertAction* OKButton = [UIAlertAction
-                               actionWithTitle:@"OK"
-                               style:UIAlertActionStyleDefault
-                               handler:^(UIAlertAction * action)
-                               {
-                               }];
-    [popup addAction:OKButton];
+    [popup addAction:button];
     [self presentViewController:popup animated:YES completion:nil];
 }
 

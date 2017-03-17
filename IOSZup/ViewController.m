@@ -29,8 +29,7 @@ static NSInteger selectedIndex = 0;
     
 //    Set the caousel datasource and delegate
     _CarouselView.dataSource = self;
-    _CarouselView.delegate = self;
-    
+    _CarouselView.delegate = self;    
 //    The carousel type
     _CarouselView.type = iCarouselTypeCoverFlow2;
     _CarouselView.centerItemWhenSelected = true;
@@ -42,6 +41,9 @@ static NSInteger selectedIndex = 0;
     _tableView.delegate = self;
     _tableView.dataSource = self;
     _tableView.rowHeight = UITableViewAutomaticDimension;
+    
+    UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(dismissKeyboard)];
+    [self.view addGestureRecognizer:tap];
     
     if (UIDeviceOrientationIsLandscape([UIDevice currentDevice].orientation)){
         _bottonCarouselConstraint.constant = 0;
@@ -57,6 +59,10 @@ static NSInteger selectedIndex = 0;
     
 //    Uncomment this line down here to clear the database
 //    [_saveLoad ClearDataBase];
+}
+
+-(void)dismissKeyboard{
+    [_searchBar resignFirstResponder];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -139,6 +145,7 @@ static NSInteger selectedIndex = 0;
 }
 
 -(void)viewDidAppear:(BOOL)animated{
+    [_searchBar resignFirstResponder];
 //    everytime the view appear it load the data and center the carousel
     [super viewDidAppear:animated];
     [self loadData];

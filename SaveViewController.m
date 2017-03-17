@@ -88,6 +88,8 @@
                                    style:UIAlertActionStyleDefault
                                    handler:^(UIAlertAction * action)
                                    {
+                                       UINavigationController * tempNav = [self navigationController];
+                                       [tempNav popViewControllerAnimated:true];
                                    }];
         [alert addAction:OKButton];
         [self presentViewController:alert animated:YES completion:nil];

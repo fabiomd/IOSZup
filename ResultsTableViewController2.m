@@ -135,7 +135,10 @@ static int nextPage;
                 if(nextPage == 1){
                     UIAlertController * alert = [UIAlertController alertControllerWithTitle:@"" message:@"Sem resultados!"preferredStyle:UIAlertControllerStyleAlert];
                     UIAlertAction* okButton = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:^(UIAlertAction * action)
-                    {}];
+                    {
+                        UINavigationController * tempNav = [self navigationController];
+                        [tempNav popToRootViewControllerAnimated:true];
+                    }];
                     [alert addAction:okButton];
                     [self presentViewController:alert animated:YES completion:nil];
                 }
