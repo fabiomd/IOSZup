@@ -96,6 +96,11 @@ static NSInteger selectedIndex = 0;
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Cell" forIndexPath:indexPath];
     
+    NSArray *viewsToRemove = [cell.contentView subviews];
+    for (UIView *v in viewsToRemove) {
+        [v removeFromSuperview];
+    }
+    
     // Configure the cell...
     UIView * temp = [_cell GetView:[_itens objectAtIndex: indexPath.section]];
     
