@@ -18,6 +18,9 @@
     [super viewDidLoad];
     
     Cell * tempCell = [[Cell alloc]init];
+    if(!_movie.image){
+        _movie.image = [UIImage imageNamed:@"not_found.jpg"];
+    }
     _verticalVersion = [tempCell GetViewComplexVertical: _movie];
     _horizontalVersion = [tempCell GetViewComplexHorizontal: _movie];
     [_displayView addSubview:_horizontalVersion];

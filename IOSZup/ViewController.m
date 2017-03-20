@@ -89,8 +89,7 @@ static NSInteger selectedIndex = 0;
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     
     //comando para quando clica no carousel
-    [self CallDescription:indexPath.item];
-    
+    [self CallDescription:indexPath.section];   
 }
 
 //    create a cell
@@ -160,6 +159,8 @@ static NSInteger selectedIndex = 0;
     
     //if theres not image, set a default one
     if(!tempView.poster.image){
+//        [tempView.poster setHidden:YES];
+        [tempView.title setHidden:NO];
         tempView.poster.image = [UIImage imageNamed:@"not_found.jpg"];
     }
     return tempView;

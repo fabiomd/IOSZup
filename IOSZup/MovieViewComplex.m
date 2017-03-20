@@ -40,12 +40,35 @@
 */
 
 -(void) fillWithMovie:(Movie *) movie{
-    _title.text = movie.title;
-    _year.text = movie.year;
-    _type.text = movie.type;
-    _plot.text = movie.plot;
-    _language.text = movie.language;
+    if(![movie.title isEqualToString:@"N/A"]){
+        _title.text = movie.title;
+    }else{
+        _title.text = @"";
+    }
+    if(![movie.year isEqualToString:@"N/A"]){
+        _year.text = movie.year;
+    }else{
+        _year.text = @"";
+    }
+    if(![movie.type isEqualToString:@"N/A"]){
+        _type.text = [movie.type uppercaseString];
+    }else{
+        _type.text = @"";
+    }
+    if(![movie.plot isEqualToString:@"N/A"]){
+        _plot.text = movie.plot;
+    }else{
+        _plot.text = @"";
+    }
+    if(![movie.language isEqualToString:@"N/A"]){
+        _language.text = movie.language;
+    }else{
+        _language.text = @"";
+    }
+    
     _poster.image = movie.image;
+    [_poster.layer setBorderColor:[[UIColor whiteColor] CGColor]];
+    [_poster.layer setBorderWidth:2.0];
 }
 
 @end

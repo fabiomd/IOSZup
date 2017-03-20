@@ -39,7 +39,11 @@
  */
 
 -(void) fillWithMovie:(Movie *) movie{
-    _title.text = movie.title;
+    if(![movie.title isEqualToString:@"N/A"]){
+        _title.text = movie.title;
+    }else{
+        _title.text = @"";
+    }
     _poster.image = movie.image;
 }
 

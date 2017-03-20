@@ -32,7 +32,9 @@
 
 
 -(void) fillWithMovie:(Movie *) movie{
-    _titleTextField.text = movie.title;
+    if(![movie.title isEqualToString:@"N/A"]){
+        _titleTextField.text = movie.title;
+    }
     _poster.image = movie.image;
 }
 @end
