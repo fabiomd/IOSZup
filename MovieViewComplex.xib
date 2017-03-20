@@ -29,30 +29,30 @@
                     <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                 </textView>
                 <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" text="Plot" textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Kjp-ip-wBz">
-                    <rect key="frame" x="2" y="458" width="296" height="84"/>
+                    <rect key="frame" x="2" y="454" width="296" height="88"/>
                     <color key="backgroundColor" red="0.25490196079999999" green="0.25882352939999997" blue="0.25882352939999997" alpha="0.20223847517872343" colorSpace="calibratedRGB"/>
                     <constraints>
-                        <constraint firstAttribute="height" constant="84" id="k4H-Ct-EaF"/>
+                        <constraint firstAttribute="height" constant="88" id="k4H-Ct-EaF"/>
                     </constraints>
                     <color key="textColor" red="0.97849462369999995" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                     <fontDescription key="fontDescription" type="boldSystem" pointSize="11"/>
                     <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                 </textView>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Year" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1dt-ps-fha">
-                    <rect key="frame" x="221" y="4" width="77" height="26"/>
+                    <rect key="frame" x="219" y="4" width="79" height="26"/>
                     <color key="backgroundColor" red="0.25490196079999999" green="0.25882352939999997" blue="0.25882352939999997" alpha="0.20223847517872343" colorSpace="calibratedRGB"/>
                     <constraints>
-                        <constraint firstAttribute="width" constant="77" id="iRK-ZR-m8j"/>
+                        <constraint firstAttribute="width" constant="79" id="iRK-ZR-m8j"/>
                     </constraints>
                     <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="13"/>
                     <color key="textColor" red="0.97849462369999995" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" text="language" textAlignment="center" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5mT-pt-DbG">
-                    <rect key="frame" x="227" y="415" width="71" height="39"/>
+                    <rect key="frame" x="225" y="415" width="73" height="39"/>
                     <color key="backgroundColor" red="0.25490196079999999" green="0.25882352939999997" blue="0.25882352939999997" alpha="0.20223847517872343" colorSpace="calibratedRGB"/>
                     <constraints>
-                        <constraint firstAttribute="width" constant="71" id="NYz-ZM-FjZ"/>
+                        <constraint firstAttribute="width" constant="73" id="NYz-ZM-FjZ"/>
                     </constraints>
                     <color key="textColor" red="0.97849462369999995" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                     <fontDescription key="fontDescription" type="boldSystem" pointSize="8"/>
@@ -74,14 +74,14 @@
             <constraints>
                 <constraint firstAttribute="bottom" secondItem="Kjp-ip-wBz" secondAttribute="bottom" constant="3" id="5BX-y6-weV"/>
                 <constraint firstItem="EeK-nJ-34q" firstAttribute="leading" secondItem="ZMs-bU-65M" secondAttribute="leading" id="BXh-TQ-ohi"/>
-                <constraint firstItem="Kjp-ip-wBz" firstAttribute="top" secondItem="ZMs-bU-65M" secondAttribute="bottom" constant="4" id="BXt-oP-dih"/>
+                <constraint firstItem="Kjp-ip-wBz" firstAttribute="top" secondItem="ZMs-bU-65M" secondAttribute="bottom" id="BXt-oP-dih"/>
                 <constraint firstItem="ZMs-bU-65M" firstAttribute="top" secondItem="5mT-pt-DbG" secondAttribute="top" id="F9T-di-pbX"/>
                 <constraint firstItem="ZMs-bU-65M" firstAttribute="top" secondItem="EeK-nJ-34q" secondAttribute="bottom" id="Py5-YO-gbc"/>
                 <constraint firstItem="ZMs-bU-65M" firstAttribute="leading" secondItem="Kjp-ip-wBz" secondAttribute="leading" id="QBk-DI-bqC"/>
                 <constraint firstItem="5mT-pt-DbG" firstAttribute="trailing" secondItem="Kjp-ip-wBz" secondAttribute="trailing" id="REn-Kq-gNB"/>
                 <constraint firstItem="qlj-x4-hC3" firstAttribute="top" secondItem="1dt-ps-fha" secondAttribute="top" id="Rhh-Vg-jvC"/>
                 <constraint firstItem="EeK-nJ-34q" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="SWU-W8-gk8"/>
-                <constraint firstItem="5mT-pt-DbG" firstAttribute="leading" secondItem="ZMs-bU-65M" secondAttribute="trailing" constant="2" id="ULA-LO-i2l"/>
+                <constraint firstItem="5mT-pt-DbG" firstAttribute="leading" secondItem="ZMs-bU-65M" secondAttribute="trailing" id="ULA-LO-i2l"/>
                 <constraint firstItem="qlj-x4-hC3" firstAttribute="leading" secondItem="EeK-nJ-34q" secondAttribute="leading" id="Vwr-WY-XeI"/>
                 <constraint firstItem="qlj-x4-hC3" firstAttribute="baseline" secondItem="1dt-ps-fha" secondAttribute="baseline" id="XQt-ed-NgR"/>
                 <constraint firstItem="qlj-x4-hC3" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="2" id="lga-Ss-bab"/>
@@ -90,7 +90,7 @@
                 <constraint firstItem="EeK-nJ-34q" firstAttribute="top" secondItem="qlj-x4-hC3" secondAttribute="bottom" constant="1" id="pEU-1X-Dy6"/>
                 <constraint firstItem="ZMs-bU-65M" firstAttribute="bottom" secondItem="5mT-pt-DbG" secondAttribute="bottom" id="pZo-Ji-CBx"/>
                 <constraint firstItem="EeK-nJ-34q" firstAttribute="trailing" secondItem="5mT-pt-DbG" secondAttribute="trailing" id="wlB-pi-cPN"/>
-                <constraint firstItem="1dt-ps-fha" firstAttribute="leading" secondItem="qlj-x4-hC3" secondAttribute="trailing" constant="2" id="x3N-N0-1Io"/>
+                <constraint firstItem="1dt-ps-fha" firstAttribute="leading" secondItem="qlj-x4-hC3" secondAttribute="trailing" id="x3N-N0-1Io"/>
             </constraints>
             <nil key="simulatedStatusBarMetrics"/>
             <nil key="simulatedBottomBarMetrics"/>
