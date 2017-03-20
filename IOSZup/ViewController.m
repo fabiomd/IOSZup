@@ -43,6 +43,7 @@ static NSInteger selectedIndex = 0;
     _tableView.rowHeight = UITableViewAutomaticDimension;
     
     UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(dismissKeyboard)];
+    [tap setCancelsTouchesInView:NO];
     [self.view addGestureRecognizer:tap];
     
     if (UIDeviceOrientationIsLandscape([UIDevice currentDevice].orientation)){
