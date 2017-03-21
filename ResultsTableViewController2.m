@@ -95,7 +95,7 @@ static int nextPage;
     frame.size.width = cell.contentView.frame.size.width;
     movieCell.frame = frame;
     
-    [cell.contentView addSubview:movieCell];   
+    [cell.contentView addSubview:movieCell];
     return cell;
 }
 
