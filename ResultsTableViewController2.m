@@ -64,11 +64,14 @@ static int nextPage;
 
     Movie * temp = [_itens objectAtIndex:indexPath.section];
     MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+    hud.userInteractionEnabled = NO;
     hud.label.text = @"Loading";
     [_connection requestByID:temp.imdbID: ^(Movie * movie){
         [hud hideAnimated:YES];
         selected = movie;
         [self performSegueWithIdentifier:@"SaveViewController" sender:self];
+    } error: ^(NSError* Error){
+        [self ConnectionError];
     }];
     
 }
@@ -92,12 +95,7 @@ static int nextPage;
     frame.size.width = cell.contentView.frame.size.width;
     movieCell.frame = frame;
     
-    [cell.contentView addSubview:movieCell];
-    
-    if(indexPath.item == ([_itens count] - 1)){
-        NSLog(@"End");
-    }
-    
+    [cell.contentView addSubview:movieCell];   
     return cell;
 }
 
@@ -129,8 +127,10 @@ static int nextPage;
 }
 
 - (void)search:(NSString*)searchText{
+    
     if(available){
         MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+        hud.userInteractionEnabled = NO;
         hud.label.text = @"Buscando";
         nextPage++;
         occupied = YES;
@@ -152,8 +152,21 @@ static int nextPage;
             }
             [hud hideAnimated:YES];
             occupied = NO;
+        } error: ^(NSError* Error){
+            [self ConnectionError];
         }];
     }
+}
+
+-(void)ConnectionError{
+    UIAlertController * alert = [UIAlertController alertControllerWithTitle:@"" message:@"Não foi possivel se conectar ao servidor! \n Verifique sua conexão"preferredStyle:UIAlertControllerStyleAlert];
+    UIAlertAction* okButton = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:^(UIAlertAction * action)
+                               {
+                                   UINavigationController * tempNav = [self navigationController];
+                                   [tempNav popToRootViewControllerAnimated:true];
+                               }];
+    [alert addAction:okButton];
+    [self presentViewController:alert animated:YES completion:nil];
 }
 
 -(void)addItens:(NSMutableArray*) array{

@@ -16,7 +16,7 @@ static NSString * const BaseURLString = @"http://www.omdbapi.com";
 
 //    will request a movie to server based on the name passed, this will return a list of NSMutableArray
 
--(void)requestByName:(NSString *)name :(int)page itens: (void (^)(NSMutableArray *) )itens{
+-(void)requestByName:(NSString *)name :(int)page itens: (void (^)(NSMutableArray *) )itens error: (void (^)(NSError*)) Error{
     
 //    Creating manager for comunication with server
     AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
@@ -40,7 +40,7 @@ static NSString * const BaseURLString = @"http://www.omdbapi.com";
     
     NSMutableArray * movies = [[NSMutableArray alloc]init];
     
-    [manager GET:tempURL parameters:nil //o cara que tinha os json pra preencher
+    [manager GET:tempURL parameters:nil
     progress:^(NSProgress * _Nonnull downloadProgress) {
     }success:^(NSURLSessionDataTask *task, id responseObject) {
 
@@ -57,13 +57,13 @@ static NSString * const BaseURLString = @"http://www.omdbapi.com";
         itens(movies);
 
     } failure:^(NSURLSessionTask *operation, NSError *error) {
-        NSLog(@"Error: %@", error);
+        Error(error);
     }];
 }
 
 //   will request a movie to server based on the id passed, will return a movie
 
--(void)requestByID:(NSString *)ID : (void (^)(Movie *) )iten{
+-(void)requestByID:(NSString *)ID : (void (^)(Movie *) )iten error: (void (^)(NSError*)) Error{
     
 //    Creating manager for comunication with server
     AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
@@ -86,7 +86,7 @@ static NSString * const BaseURLString = @"http://www.omdbapi.com";
             iten(movie);
             
         } failure:^(NSURLSessionTask *operation, NSError *error) {
-            NSLog(@"Error: %@", error);
+            Error(error);
         }];
 }
 

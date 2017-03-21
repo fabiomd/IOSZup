@@ -28,10 +28,6 @@
                                     <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="hHo-Oc-0c8">
                                         <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
                                         <textInputTraits key="textInputTraits" autocorrectionType="yes" spellCheckingType="yes" enablesReturnKeyAutomatically="YES"/>
-                                        <scopeButtonTitles>
-                                            <string>Title</string>
-                                            <string>Title</string>
-                                        </scopeButtonTitles>
                                         <connections>
                                             <outlet property="delegate" destination="nEC-IW-bzz" id="fah-4L-WgN"/>
                                         </connections>
