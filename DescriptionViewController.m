@@ -66,8 +66,8 @@
     
     UIAlertController * alert=[UIAlertController alertControllerWithTitle:@"" message:@"O FILME SERA REMOVIDO, \n DESEJA PROCESSEGUIR?"preferredStyle:UIAlertControllerStyleAlert];
     
-    UIAlertAction* yesButton = [UIAlertAction actionWithTitle:@"SIM" style:UIAlertActionStyleDefault handler:^(UIAlertAction * action)
-                                {
+    UIAlertAction* yesButton = [UIAlertAction actionWithTitle:@"SIM" style:UIAlertActionStyleDefault handler:^(UIAlertAction * action){
+        
                                     [_saveLoad Load:^(NSMutableArray * contentLoaded){
                                         NSMutableArray * itens = contentLoaded;
                                         if(!itens){
@@ -83,31 +83,19 @@
                                         [_saveLoad Save:itens];
                                     }];
                                     
-                                    UIAlertAction* OKButton = [UIAlertAction
-                                                               actionWithTitle:@"OK"
-                                                               style:UIAlertActionStyleDefault
-                                                               handler:^(UIAlertAction * action)
-                                                               {
+                                    UIAlertAction* OKButton = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:^(UIAlertAction * action){
                                                                    UINavigationController * tempNav = [self navigationController];
                                                                    [tempNav popToRootViewControllerAnimated:true];
                                                                }];
                                     
                                     [self POPUP:@"Filme removido!" button:OKButton];
                                 }];
-    UIAlertAction* cancelButton = [UIAlertAction actionWithTitle:@"CANCELAR" style:UIAlertActionStyleDefault handler:^(UIAlertAction * action)
-                               {
-                                   UIAlertAction* OKButton = [UIAlertAction
-                                                              actionWithTitle:@"OK"
-                                                              style:UIAlertActionStyleDefault
-                                                              handler:^(UIAlertAction * action)
-                                                              {
-                                                              }];
-                                   
-                                   [self POPUP:@"Operacao abortada!" button:OKButton];
+    UIAlertAction* cancelButton = [UIAlertAction actionWithTitle:@"CANCELAR" style:UIAlertActionStyleDefault handler:^(UIAlertAction * action){
                                }];
-    
     [alert addAction:yesButton];
     [alert addAction:cancelButton];
+    [alert setPreferredAction:cancelButton];
+    
     
     [self presentViewController:alert animated:YES completion:nil];
 }
