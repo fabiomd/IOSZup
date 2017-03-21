@@ -46,7 +46,7 @@
                                                 <rect key="frame" x="0.0" y="40" width="414" height="25"/>
                                                 <autoresizingMask key="autoresizingMask"/>
                                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Mae-zx-5b0" id="aO9-cR-Eim">
-                                                    <rect key="frame" x="0.0" y="0.0" width="414" height="25"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="414" height="24.666666666666668"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                 </tableViewCellContentView>
                                                 <color key="backgroundColor" red="0.98658725849999995" green="0.99814851650000003" blue="1" alpha="0.0" colorSpace="calibratedRGB"/>
@@ -113,8 +113,8 @@
                                 <rect key="frame" x="366" y="67" width="40" height="40"/>
                                 <color key="backgroundColor" red="0.9457707405090332" green="0.055043528218184326" blue="0.060012975737670934" alpha="0.0" colorSpace="calibratedRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="40" id="Nmb-ef-RW6"/>
-                                    <constraint firstAttribute="width" constant="40" id="iaa-Pm-Fqw"/>
+                                    <constraint firstAttribute="width" constant="40" id="Jic-vp-6uk"/>
+                                    <constraint firstAttribute="height" constant="40" id="TE5-kQ-t3M"/>
                                 </constraints>
                                 <state key="normal" backgroundImage="delete-icon.png">
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -131,12 +131,12 @@
                         </subviews>
                         <color key="backgroundColor" red="0.97849462369999995" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
-                            <constraint firstItem="V8P-tQ-4Om" firstAttribute="top" secondItem="bqM-86-JqH" secondAttribute="bottom" constant="3" id="1v3-1c-W8p"/>
-                            <constraint firstItem="ZY1-PN-wD2" firstAttribute="top" secondItem="V8P-tQ-4Om" secondAttribute="bottom" constant="3" id="2Oj-vK-QAl"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="V8P-tQ-4Om" secondAttribute="trailing" constant="-12" id="Cvi-ty-Fdq"/>
-                            <constraint firstAttribute="trailing" secondItem="ZY1-PN-wD2" secondAttribute="trailing" id="P0j-Dp-GYf"/>
-                            <constraint firstItem="ZY1-PN-wD2" firstAttribute="leading" secondItem="vtY-fL-69s" secondAttribute="leading" id="qj1-eb-jZr"/>
-                            <constraint firstItem="ZY1-PN-wD2" firstAttribute="bottom" secondItem="eoo-Le-Tie" secondAttribute="top" id="sZP-Jx-Tjg"/>
+                            <constraint firstItem="V8P-tQ-4Om" firstAttribute="top" secondItem="bqM-86-JqH" secondAttribute="bottom" constant="3" id="6Vb-Iz-CSb"/>
+                            <constraint firstItem="ZY1-PN-wD2" firstAttribute="leading" secondItem="vtY-fL-69s" secondAttribute="leading" id="7kj-45-g2K"/>
+                            <constraint firstItem="ZY1-PN-wD2" firstAttribute="bottom" secondItem="eoo-Le-Tie" secondAttribute="top" id="WHO-CE-rpW"/>
+                            <constraint firstItem="ZY1-PN-wD2" firstAttribute="top" secondItem="V8P-tQ-4Om" secondAttribute="bottom" constant="3" id="ehr-nn-gVg"/>
+                            <constraint firstAttribute="trailing" secondItem="ZY1-PN-wD2" secondAttribute="trailing" id="fxJ-h1-T2J"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="V8P-tQ-4Om" secondAttribute="trailing" constant="-12" id="pAY-cr-cNP"/>
                         </constraints>
                     </view>
                     <connections>
@@ -146,7 +146,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="627-Po-pId" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1668.75" y="644.36619718309862"/>
+            <point key="canvasLocation" x="1668.1159420289857" y="644.02173913043487"/>
         </scene>
         <!--Results Table View Controller2-->
         <scene sceneID="jEY-SG-lrB">
@@ -175,7 +175,7 @@
                                         <rect key="frame" x="0.0" y="28" width="414" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="lH3-Ku-U9i" id="6Tk-we-eDG">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="43.666666666666664"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" red="0.93128905849999999" green="0.0095621642009999994" blue="0.0" alpha="0.0" colorSpace="calibratedRGB"/>
