@@ -10,8 +10,7 @@
 		4EB3A27549BAC37B15025CF0 /* libPods-IOSZup.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A834E986DB65CCDD6F4440B7 /* libPods-IOSZup.a */; };
 		E534FECC1E69FCAA004BB969 /* MovieView.xib in Resources */ = {isa = PBXBuildFile; fileRef = E534FECB1E69FCAA004BB969 /* MovieView.xib */; };
 		E534FED11E69FDED004BB969 /* MovieView.m in Sources */ = {isa = PBXBuildFile; fileRef = E534FED01E69FDED004BB969 /* MovieView.m */; };
-		E5419FB91E817A780089CE4A /* delete-icon2.png in Resources */ = {isa = PBXBuildFile; fileRef = E5419FB81E817A780089CE4A /* delete-icon2.png */; };
-		E5419FBB1E817B540089CE4A /* delete-icon3.png in Resources */ = {isa = PBXBuildFile; fileRef = E5419FBA1E817B540089CE4A /* delete-icon3.png */; };
+		E5419FBB1E817B540089CE4A /* delete-icon.png in Resources */ = {isa = PBXBuildFile; fileRef = E5419FBA1E817B540089CE4A /* delete-icon.png */; };
 		E55665421E798F5200C0A6AF /* MovieViewSimplex.xib in Resources */ = {isa = PBXBuildFile; fileRef = E55665411E798F5200C0A6AF /* MovieViewSimplex.xib */; };
 		E55665461E798FAD00C0A6AF /* MovieViewSimplex.m in Sources */ = {isa = PBXBuildFile; fileRef = E55665451E798FAD00C0A6AF /* MovieViewSimplex.m */; };
 		E55A552D1E7700EC00484A6B /* SaveLoad.m in Sources */ = {isa = PBXBuildFile; fileRef = E55A552C1E7700EC00484A6B /* SaveLoad.m */; };
@@ -26,7 +25,6 @@
 		E58098231E731AB200556A94 /* MovieViewComplex.xib in Resources */ = {isa = PBXBuildFile; fileRef = E58098221E731AB200556A94 /* MovieViewComplex.xib */; };
 		E58098261E731D5A00556A94 /* SaveViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E58098251E731D5A00556A94 /* SaveViewController.m */; };
 		E5901F3D1E803BAF00F86879 /* save-icon.png in Resources */ = {isa = PBXBuildFile; fileRef = E5901F3C1E803BAF00F86879 /* save-icon.png */; };
-		E5901F411E803DE400F86879 /* delete-icon.png in Resources */ = {isa = PBXBuildFile; fileRef = E5901F401E803DE400F86879 /* delete-icon.png */; };
 		E5AA87AD1E68797B0078A292 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = E5AA87AC1E68797B0078A292 /* main.m */; };
 		E5AA87B01E68797B0078A292 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = E5AA87AF1E68797B0078A292 /* AppDelegate.m */; };
 		E5AA87B91E68797B0078A292 /* IOSZup.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = E5AA87B71E68797B0078A292 /* IOSZup.xcdatamodeld */; };
@@ -43,8 +41,7 @@
 		E534FECB1E69FCAA004BB969 /* MovieView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MovieView.xib; sourceTree = "<group>"; };
 		E534FECF1E69FDED004BB969 /* MovieView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MovieView.h; sourceTree = "<group>"; };
 		E534FED01E69FDED004BB969 /* MovieView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MovieView.m; sourceTree = "<group>"; };
-		E5419FB81E817A780089CE4A /* delete-icon2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "delete-icon2.png"; sourceTree = "<group>"; };
-		E5419FBA1E817B540089CE4A /* delete-icon3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "delete-icon3.png"; sourceTree = "<group>"; };
+		E5419FBA1E817B540089CE4A /* delete-icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "delete-icon.png"; sourceTree = "<group>"; };
 		E55665411E798F5200C0A6AF /* MovieViewSimplex.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MovieViewSimplex.xib; sourceTree = "<group>"; };
 		E55665441E798FAD00C0A6AF /* MovieViewSimplex.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MovieViewSimplex.h; sourceTree = "<group>"; };
 		E55665451E798FAD00C0A6AF /* MovieViewSimplex.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MovieViewSimplex.m; sourceTree = "<group>"; };
@@ -67,7 +64,6 @@
 		E58098241E731D5A00556A94 /* SaveViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SaveViewController.h; sourceTree = "<group>"; };
 		E58098251E731D5A00556A94 /* SaveViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SaveViewController.m; sourceTree = "<group>"; };
 		E5901F3C1E803BAF00F86879 /* save-icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "save-icon.png"; sourceTree = "<group>"; };
-		E5901F401E803DE400F86879 /* delete-icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "delete-icon.png"; sourceTree = "<group>"; };
 		E5AA87A81E68797B0078A292 /* IOSZup.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = IOSZup.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E5AA87AC1E68797B0078A292 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		E5AA87AE1E68797B0078A292 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -204,9 +200,7 @@
 		E5AA87AA1E68797B0078A292 /* IOSZup */ = {
 			isa = PBXGroup;
 			children = (
-				E5419FBA1E817B540089CE4A /* delete-icon3.png */,
-				E5419FB81E817A780089CE4A /* delete-icon2.png */,
-				E5901F401E803DE400F86879 /* delete-icon.png */,
+				E5419FBA1E817B540089CE4A /* delete-icon.png */,
 				E5901F3C1E803BAF00F86879 /* save-icon.png */,
 				E56D25F51E71AF7700F16AC9 /* not_found.jpg */,
 				E57595C31E784D42003EE397 /* SaveLoad */,
@@ -298,15 +292,13 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E5419FBB1E817B540089CE4A /* delete-icon3.png in Resources */,
+				E5419FBB1E817B540089CE4A /* delete-icon.png in Resources */,
 				E5AA87BB1E68797B0078A292 /* Assets.xcassets in Resources */,
 				E56D25F61E71AF7700F16AC9 /* not_found.jpg in Resources */,
 				E55665421E798F5200C0A6AF /* MovieViewSimplex.xib in Resources */,
 				E57595C61E7857BC003EE397 /* Main.storyboard in Resources */,
 				E55C84781E7B286C00CA5981 /* MovieViewComplex2.xib in Resources */,
 				E5901F3D1E803BAF00F86879 /* save-icon.png in Resources */,
-				E5419FB91E817A780089CE4A /* delete-icon2.png in Resources */,
-				E5901F411E803DE400F86879 /* delete-icon.png in Resources */,
 				E58098231E731AB200556A94 /* MovieViewComplex.xib in Resources */,
 				E534FECC1E69FCAA004BB969 /* MovieView.xib in Resources */,
 			);
