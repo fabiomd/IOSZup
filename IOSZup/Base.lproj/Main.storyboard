@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="15G1217" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="dWZ-S7-5jP">
-    <device id="retina4_0" orientation="portrait">
+    <device id="retina5_5" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
@@ -19,15 +19,15 @@
                         <viewControllerLayoutGuide type="bottom" id="FsW-5Z-uqr"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="arz-nr-ZX6">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cp9-MB-lBF">
-                                <rect key="frame" x="0.0" y="64" width="320" height="504"/>
+                                <rect key="frame" x="0.0" y="64" width="414" height="672"/>
                                 <subviews>
                                     <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="hHo-Oc-0c8">
-                                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
-                                        <textInputTraits key="textInputTraits" autocorrectionType="yes" spellCheckingType="no" enablesReturnKeyAutomatically="YES"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
+                                        <textInputTraits key="textInputTraits" autocorrectionType="yes" spellCheckingType="yes" keyboardAppearance="alert" enablesReturnKeyAutomatically="YES"/>
                                         <scopeButtonTitles>
                                             <string>Title</string>
                                             <string>Title</string>
@@ -37,20 +37,20 @@
                                         </connections>
                                     </searchBar>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kYc-6H-Env" customClass="iCarousel">
-                                        <rect key="frame" x="0.0" y="74" width="320" height="230"/>
+                                        <rect key="frame" x="0.0" y="74" width="414" height="398"/>
                                     </view>
                                     <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="3" sectionHeaderHeight="40" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="dUo-pG-eBf">
-                                        <rect key="frame" x="0.0" y="312" width="320" height="192"/>
+                                        <rect key="frame" x="0.0" y="480" width="414" height="192"/>
                                         <color key="backgroundColor" red="0.93128905849999999" green="0.0095621642009999994" blue="0.0" alpha="0.68317819150000003" colorSpace="calibratedRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="192" id="5uO-Uh-Gck"/>
                                         </constraints>
                                         <prototypes>
                                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" rowHeight="25" id="Mae-zx-5b0">
-                                                <rect key="frame" x="0.0" y="40" width="320" height="25"/>
+                                                <rect key="frame" x="0.0" y="40" width="414" height="25"/>
                                                 <autoresizingMask key="autoresizingMask"/>
                                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Mae-zx-5b0" id="aO9-cR-Eim">
-                                                    <rect key="frame" x="0.0" y="0.0" width="320" height="24"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="414" height="25"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                 </tableViewCellContentView>
                                                 <color key="backgroundColor" red="0.98658725849999995" green="0.99814851650000003" blue="1" alpha="0.0" colorSpace="calibratedRGB"/>
@@ -110,17 +110,17 @@
                         <viewControllerLayoutGuide type="bottom" id="eoo-Le-Tie"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="vtY-fL-69s">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="V8P-tQ-4Om">
-                                <rect key="frame" x="276" y="67" width="40" height="40"/>
+                                <rect key="frame" x="366" y="67" width="40" height="40"/>
                                 <color key="backgroundColor" red="0.9457707405090332" green="0.055043528218184326" blue="0.060012975737670934" alpha="0.0" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="Nmb-ef-RW6"/>
                                     <constraint firstAttribute="width" constant="40" id="iaa-Pm-Fqw"/>
                                 </constraints>
-                                <state key="normal" backgroundImage="delete-icon.png">
+                                <state key="normal" backgroundImage="delete-icon3.png">
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" cocoaTouchSystemColor="darkTextColor"/>
                                 </state>
@@ -129,11 +129,11 @@
                                 </connections>
                             </button>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZY1-PN-wD2">
-                                <rect key="frame" x="0.0" y="110" width="320" height="458"/>
+                                <rect key="frame" x="0.0" y="110" width="414" height="626"/>
                                 <color key="backgroundColor" red="0.93128905849999999" green="0.0095621642009999994" blue="0.0" alpha="0.68317819150000003" colorSpace="calibratedRGB"/>
                             </view>
                         </subviews>
-                        <color key="backgroundColor" red="0.75686274509999996" green="0.75686274509999996" blue="0.76078431369999999" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" red="0.97849462369999995" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="V8P-tQ-4Om" firstAttribute="top" secondItem="bqM-86-JqH" secondAttribute="bottom" constant="3" id="1v3-1c-W8p"/>
                             <constraint firstItem="ZY1-PN-wD2" firstAttribute="top" secondItem="V8P-tQ-4Om" secondAttribute="bottom" constant="3" id="2Oj-vK-QAl"/>
@@ -161,25 +161,25 @@
                         <viewControllerLayoutGuide type="bottom" id="MEv-UK-Wa6"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="Zh3-wc-OBj">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="RGj-R2-prj">
-                                <rect key="frame" x="0.0" y="64" width="320" height="44"/>
-                                <textInputTraits key="textInputTraits" autocorrectionType="yes" spellCheckingType="no"/>
+                                <rect key="frame" x="0.0" y="64" width="414" height="44"/>
+                                <textInputTraits key="textInputTraits" autocorrectionType="yes" spellCheckingType="yes"/>
                                 <connections>
                                     <outlet property="delegate" destination="lNW-Ba-xgk" id="ehQ-tN-SxU"/>
                                 </connections>
                             </searchBar>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="kRJ-UN-ftZ">
-                                <rect key="frame" x="0.0" y="108" width="320" height="460"/>
+                                <rect key="frame" x="0.0" y="108" width="414" height="628"/>
                                 <color key="backgroundColor" red="0.93128905849999999" green="0.0095621642009999994" blue="0.0" alpha="0.68317819150000003" colorSpace="calibratedRGB"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" id="lH3-Ku-U9i">
-                                        <rect key="frame" x="0.0" y="28" width="320" height="44"/>
+                                        <rect key="frame" x="0.0" y="28" width="414" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="lH3-Ku-U9i" id="6Tk-we-eDG">
-                                            <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" red="0.93128905849999999" green="0.0095621642009999994" blue="0.0" alpha="0.0" colorSpace="calibratedRGB"/>
@@ -217,11 +217,11 @@
                         <viewControllerLayoutGuide type="bottom" id="CCq-e9-gUB"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="E7y-7o-2Vj">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XXr-0r-O4x">
-                                <rect key="frame" x="276" y="67" width="40" height="40"/>
+                                <rect key="frame" x="366" y="67" width="40" height="40"/>
                                 <color key="backgroundColor" red="0.50841590427050831" green="0.78329515706806285" blue="0.47070905060074553" alpha="0.0" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="40" id="Aoy-yu-Ipc"/>
@@ -235,11 +235,11 @@
                                 </connections>
                             </button>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2SU-58-XW0">
-                                <rect key="frame" x="0.0" y="110" width="320" height="458"/>
+                                <rect key="frame" x="0.0" y="110" width="414" height="626"/>
                                 <color key="backgroundColor" red="0.93128905849999999" green="0.0095621642009999994" blue="0.0" alpha="0.68317819150000003" colorSpace="calibratedRGB"/>
                             </view>
                         </subviews>
-                        <color key="backgroundColor" red="0.75686274509999996" green="0.75686274509999996" blue="0.76078431369999999" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" red="0.97849462369999995" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="2SU-58-XW0" firstAttribute="bottom" secondItem="CCq-e9-gUB" secondAttribute="top" id="07o-of-yxL"/>
                             <constraint firstAttribute="trailingMargin" secondItem="XXr-0r-O4x" secondAttribute="trailing" constant="-12" id="FZj-Pc-aBN"/>
@@ -278,7 +278,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="delete-icon.png" width="512" height="512"/>
+        <image name="delete-icon3.png" width="64" height="64"/>
         <image name="save-icon.png" width="512" height="512"/>
     </resources>
 </document>
