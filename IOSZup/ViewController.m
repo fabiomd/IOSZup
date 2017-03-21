@@ -27,25 +27,29 @@ static NSInteger selectedIndex = 0;
     [super viewDidLoad];
 //    Do any additional setup after loading the view, typically from a nib.
     
-//    Set the caousel datasource and delegate
+//    Set carousel datasource and delegate
     _CarouselView.dataSource = self;
     _CarouselView.delegate = self;    
 //    The carousel type
     _CarouselView.type = iCarouselTypeCoverFlow2;
     _CarouselView.centerItemWhenSelected = true;
-    
+
+//    iniciate global vars
     _cell = [[Cell alloc] init];
     _connection = [[Connection alloc]init];
     _saveLoad = [[SaveLoad alloc] init];
     
+//    Set table datasource and delegate
     _tableView.delegate = self;
     _tableView.dataSource = self;
     _tableView.rowHeight = UITableViewAutomaticDimension;
     
+//    when tap a view, close the keyboard
     UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(dismissKeyboard)];
     [tap setCancelsTouchesInView:NO];
     [self.view addGestureRecognizer:tap];
     
+//    views resize if horizontal or vertical
     if (UIDeviceOrientationIsLandscape([UIDevice currentDevice].orientation)){
         _bottonCarouselConstraint.constant = 0;
         _topCarouselConstraint.constant = 0;
@@ -62,6 +66,21 @@ static NSInteger selectedIndex = 0;
 //    [_saveLoad ClearDataBase];
 }
 
+//  everytime the view appears, this function is called
+
+-(void)viewDidAppear:(BOOL)animated{
+    
+//  closes the search keyboard
+    [_searchBar resignFirstResponder];
+//    everytime the view appear it load the data and center the carousel
+    [super viewDidAppear:animated];
+    [self loadData];
+    [_CarouselView scrollToItemAtIndex:[_itens count]/2 animated: YES];
+}
+
+
+//  close the searchbar keyboard
+
 -(void)dismissKeyboard{
     [_searchBar resignFirstResponder];
 }
@@ -69,6 +88,8 @@ static NSInteger selectedIndex = 0;
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
 }
+
+//  TABLE FUNCTIONS
 
 //    number of cells in table
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
@@ -89,7 +110,8 @@ static NSInteger selectedIndex = 0;
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     
     //comando para quando clica no carousel
-    [self CallDescription:indexPath.section];   
+    [_CarouselView scrollToItemAtIndex:indexPath.section animated: YES];
+//    [self CallDescription:indexPath.section];   
 }
 
 //    create a cell
@@ -123,6 +145,8 @@ static NSInteger selectedIndex = 0;
 }
 
 
+// END TABLE FUNCTIONS
+
 -(void)addItens:(NSMutableArray*) i{
     for(Movie * tempM in i){
         [_itens addObject:tempM];
@@ -139,6 +163,8 @@ static NSInteger selectedIndex = 0;
     [_tableView reloadData];
 }
 
+//  CAROUSEL FUNCTIONS
+
     
 -(CGFloat)carouselItemWidth:(iCarousel *)carousel{
     return 200;
@@ -149,13 +175,7 @@ static NSInteger selectedIndex = 0;
     //return the number of elements on the carousel
 }
 
--(void)viewDidAppear:(BOOL)animated{
-    [_searchBar resignFirstResponder];
-//    everytime the view appear it load the data and center the carousel
-    [super viewDidAppear:animated];
-    [self loadData];
-    [_CarouselView scrollToItemAtIndex:[_itens count]/2 animated: YES];
-}
+
 
 - (UIView *)carousel:(iCarousel *)carousel viewForItemAtIndex:(NSInteger)index reusingView:(nullable UIView *)view {
 //    allocate a new Cell
@@ -176,6 +196,10 @@ static NSInteger selectedIndex = 0;
     //comando para quando clica no carousel
     [self CallDescription:index];
 }
+
+
+//  END CAROUSEL FUNCTIONS
+
 
 - (void)searchBarSearchButtonClicked:(UISearchBar *) searchBar
 {
