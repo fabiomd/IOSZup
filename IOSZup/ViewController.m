@@ -8,6 +8,8 @@
 
 #import "ViewController.h"
 
+#define tableConstraintHeight 270
+
 @interface ViewController () <iCarouselDataSource, iCarouselDelegate,UITableViewDelegate , UITableViewDataSource, UIGestureRecognizerDelegate>
 @property (strong, nonatomic) Connection * connection;
 @end
@@ -58,7 +60,7 @@ static NSInteger selectedIndex = 0;
     }else{
         _topCarouselConstraint.constant =0;
         _bottonCarouselConstraint.constant = 200;
-        _tableHeightConstraint.constant = 270;
+        _tableHeightConstraint.constant = tableConstraintHeight;
         [_tableView setHidden:NO];
     }
     
@@ -110,8 +112,7 @@ static NSInteger selectedIndex = 0;
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     
     //comando para quando clica no carousel
-    [_CarouselView scrollToItemAtIndex:indexPath.section animated: YES];
-//    [self CallDescription:indexPath.section];   
+    [_CarouselView scrollToItemAtIndex:indexPath.section animated: YES];  
 }
 
 //    create a cell
@@ -185,7 +186,6 @@ static NSInteger selectedIndex = 0;
 //    allocate a new Cell
     UIView * temp = [_cell GetViewSimplex:[_itens objectAtIndex:index]];
     MovieViewSimplex * tempView = (MovieViewSimplex*)temp;
-    
     //if theres not image, set a default one
     if(!tempView.poster.image){
 //        [tempView.poster setHidden:YES];
@@ -245,7 +245,7 @@ static NSInteger selectedIndex = 0;
     }else{
         _topCarouselConstraint.constant =0;
         _bottonCarouselConstraint.constant = 200;
-        _tableHeightConstraint.constant = 270;
+        _tableHeightConstraint.constant = tableConstraintHeight;
         [_tableView setHidden:NO];
     }
 }

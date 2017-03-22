@@ -44,7 +44,7 @@
                         <constraint firstAttribute="height" constant="68" id="u9B-mq-GTr"/>
                     </constraints>
                     <color key="textColor" red="0.91376384509999997" green="0.91729129539999998" blue="0.92787364620000001" alpha="1" colorSpace="calibratedRGB"/>
-                    <fontDescription key="fontDescription" type="italicSystem" pointSize="20"/>
+                    <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="17"/>
                     <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                 </textView>
                 <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="plot" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="vp6-D9-IxU">
