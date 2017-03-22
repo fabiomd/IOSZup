@@ -175,6 +175,10 @@ static NSInteger selectedIndex = 0;
     //return the number of elements on the carousel
 }
 
+-(void)carouselDidEndScrollingAnimation:(iCarousel *)carousel{
+    NSIndexPath *index = [NSIndexPath indexPathForRow:0 inSection:[_CarouselView currentItemIndex]];
+    [_tableView scrollToRowAtIndexPath:index atScrollPosition:UITableViewScrollPositionMiddle animated:YES];
+}
 
 
 - (UIView *)carousel:(iCarousel *)carousel viewForItemAtIndex:(NSInteger)index reusingView:(nullable UIView *)view {
@@ -194,7 +198,9 @@ static NSInteger selectedIndex = 0;
 
 - (void)carousel:(iCarousel *)carousel didSelectItemAtIndex:(NSInteger)index{
     //comando para quando clica no carousel
-    [self CallDescription:index];
+   
+    selectedIndex = index;
+    [self performSegueWithIdentifier:@"DetailsViewController" sender:self];
 }
 
 
@@ -213,12 +219,6 @@ static NSInteger selectedIndex = 0;
     [self performSegueWithIdentifier:@"ResultsTableViewController2" sender:self];
 }
 
-//    call the ViewController to show the movie with more detays
--(void)CallDescription:(NSInteger)index{
-    selectedIndex = index;
-    [self performSegueWithIdentifier:@"DescriptionViewController" sender:self];
-}
-
 //In a storyboard-based application, you will often want to do a little preparation before navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     
@@ -229,8 +229,8 @@ static NSInteger selectedIndex = 0;
         _searchBar.text = @"";
     }
     
-    if ([segue.identifier isEqualToString:@"DescriptionViewController"]) {
-        DescriptionViewController *temp = (DescriptionViewController *) segue.destinationViewController;
+    if ([segue.identifier isEqualToString:@"DetailsViewController"]) {
+        DetailsViewController *temp = (DetailsViewController *) segue.destinationViewController;
         temp.movie = [_itens objectAtIndex:selectedIndex];
     }
 }

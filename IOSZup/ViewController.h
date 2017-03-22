@@ -11,9 +11,8 @@
 #import "Cell.h"
 #import "Movie.h"
 #import "Connection.h"
-#import "SaveViewController.h"
 #import "ResultsTableViewController2.h"
-#import "DescriptionViewController.h"
+#import "DetailsViewController.h"
 #import "SaveLoad.h"
 
 @interface ViewController :UIViewController

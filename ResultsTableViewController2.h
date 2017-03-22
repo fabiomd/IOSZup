@@ -7,8 +7,8 @@
 //
 
 #import "ViewController.h"
-//#import <Foundation/Foundation.h>
 #import "MBProgressHUD.h"
+#import "DetailsViewController.h"
 
 @interface ResultsTableViewController2 : UIViewController
 

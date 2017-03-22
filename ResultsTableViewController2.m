@@ -69,9 +69,12 @@ static int nextPage;
     [_connection requestByID:temp.imdbID: ^(Movie * movie){
         [hud hideAnimated:YES];
         selected = movie;
-        [self performSegueWithIdentifier:@"SaveViewController" sender:self];
+        [self performSegueWithIdentifier:@"DetailsViewController" sender:self];
     } error: ^(NSError* Error){
-        [self ConnectionError];
+        dispatch_async(dispatch_get_main_queue(), ^ {
+            [self ConnectionError];
+        });
+//        [self ConnectionError];
     }];
     
 }
@@ -153,7 +156,10 @@ static int nextPage;
             [hud hideAnimated:YES];
             occupied = NO;
         } error: ^(NSError* Error){
-            [self ConnectionError];
+            dispatch_async(dispatch_get_main_queue(), ^ {
+                [self ConnectionError];
+            });
+//            [self ConnectionError];
         }];
     }
 }
@@ -180,9 +186,9 @@ static int nextPage;
 
 // In a storyboard-based application, you will often want to do a little preparation before navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-
-    if ([segue.identifier isEqualToString:@"SaveViewController"]) {
-        SaveViewController *temp = (SaveViewController *) segue.destinationViewController;
+    
+    if ([segue.identifier isEqualToString:@"DetailsViewController"]) {
+        DetailsViewController *temp = (DetailsViewController *) segue.destinationViewController;
         temp.movie = selected;
     }
 }
