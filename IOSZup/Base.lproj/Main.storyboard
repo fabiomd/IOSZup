@@ -111,14 +111,14 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Yy2-iz-Eg8">
-                                <rect key="frame" x="0.0" y="114" width="414" height="622"/>
+                                <rect key="frame" x="0.0" y="92" width="414" height="644"/>
                                 <color key="backgroundColor" red="0.91376384509999997" green="0.91729129539999998" blue="0.92787364620000001" alpha="1" colorSpace="calibratedRGB"/>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dXO-wT-ib3">
-                                <rect key="frame" x="357" y="64" width="50" height="50"/>
+                                <rect key="frame" x="384" y="64" width="20" height="20"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="50" id="Pev-id-vg2"/>
-                                    <constraint firstAttribute="width" constant="50" id="jP2-ZE-ISQ"/>
+                                    <constraint firstAttribute="height" constant="20" id="aEX-GO-E03"/>
+                                    <constraint firstAttribute="width" constant="20" id="iLL-9G-BC7"/>
                                 </constraints>
                                 <state key="normal" backgroundImage="not_found.jpg"/>
                                 <connections>
@@ -128,12 +128,12 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="Yy2-iz-Eg8" firstAttribute="bottom" secondItem="tBS-ms-4mJ" secondAttribute="top" id="BX6-JD-Cwb"/>
-                            <constraint firstItem="dXO-wT-ib3" firstAttribute="top" secondItem="RtL-mp-Juv" secondAttribute="bottom" id="HNw-R5-j9G"/>
-                            <constraint firstAttribute="trailing" secondItem="Yy2-iz-Eg8" secondAttribute="trailing" id="NZy-FF-Fss"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="dXO-wT-ib3" secondAttribute="trailing" constant="-13" id="qfl-FE-hLF"/>
-                            <constraint firstItem="Yy2-iz-Eg8" firstAttribute="top" secondItem="dXO-wT-ib3" secondAttribute="bottom" id="rg2-sH-6T3"/>
-                            <constraint firstItem="Yy2-iz-Eg8" firstAttribute="leading" secondItem="v3W-QQ-rrA" secondAttribute="leading" id="wzm-Oj-GKh"/>
+                            <constraint firstItem="Yy2-iz-Eg8" firstAttribute="leading" secondItem="v3W-QQ-rrA" secondAttribute="leading" id="6YL-b8-87F"/>
+                            <constraint firstItem="Yy2-iz-Eg8" firstAttribute="bottom" secondItem="tBS-ms-4mJ" secondAttribute="top" id="OI9-Ir-Ypf"/>
+                            <constraint firstAttribute="trailing" secondItem="Yy2-iz-Eg8" secondAttribute="trailing" id="cPG-Ow-Sus"/>
+                            <constraint firstItem="dXO-wT-ib3" firstAttribute="top" secondItem="RtL-mp-Juv" secondAttribute="bottom" id="fcR-hf-uxP"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="dXO-wT-ib3" secondAttribute="trailing" constant="-10" id="gZT-jm-rj9"/>
+                            <constraint firstItem="Yy2-iz-Eg8" firstAttribute="top" secondItem="dXO-wT-ib3" secondAttribute="bottom" constant="8" symbolic="YES" id="iQ8-vW-kll"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="DETALHES" id="vMl-Wq-QQd">
@@ -146,7 +146,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yje-Q7-fnt" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2055" y="696"/>
+            <point key="canvasLocation" x="2053.6231884057975" y="695.38043478260875"/>
         </scene>
         <!--MINHA BUSCA-->
         <scene sceneID="jEY-SG-lrB">
