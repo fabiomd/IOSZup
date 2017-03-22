@@ -32,6 +32,13 @@
     }
     _verticalVersion = [tempCell GetViewComplexVertical: _movie];
     _horizontalVersion = [tempCell GetViewComplexHorizontal: _movie];
+    
+    [_horizontalVersion.layer setBorderColor:[[UIColor whiteColor] CGColor]];
+    [_horizontalVersion.layer setBorderWidth:2.0];
+    
+    [_verticalVersion.layer setBorderColor:[[UIColor whiteColor] CGColor]];
+    [_verticalVersion.layer setBorderWidth:2.0];
+    
     [_displayView addSubview:_horizontalVersion];
     [_displayView addSubview:_verticalVersion];
     _verticalVersion.frame = [self getFrameSize:_verticalVersion];

@@ -58,7 +58,7 @@ static NSInteger selectedIndex = 0;
     }else{
         _topCarouselConstraint.constant =0;
         _bottonCarouselConstraint.constant = 200;
-        _tableHeightConstraint.constant = 184;
+        _tableHeightConstraint.constant = 270;
         [_tableView setHidden:NO];
     }
     
@@ -245,7 +245,7 @@ static NSInteger selectedIndex = 0;
     }else{
         _topCarouselConstraint.constant =0;
         _bottonCarouselConstraint.constant = 200;
-        _tableHeightConstraint.constant = 184;
+        _tableHeightConstraint.constant = 270;
         [_tableView setHidden:NO];
     }
 }
