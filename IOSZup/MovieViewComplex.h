@@ -19,6 +19,10 @@
 @property (weak, nonatomic) IBOutlet UITextView *title;
 @property (weak, nonatomic) IBOutlet UITextView *language;
 @property (weak, nonatomic) IBOutlet UITextView *plot;
+@property (weak, nonatomic) IBOutlet UILabel *rating;
+@property (weak, nonatomic) IBOutlet UILabel *duration;
+@property (weak, nonatomic) IBOutlet UITextView *actors;
+@property (weak, nonatomic) IBOutlet UILabel *genre;
   
 
 -(void) fillWithMovie:(Movie *) movie;

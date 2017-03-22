@@ -46,7 +46,9 @@
         _title.text = @"";
     }
     if(![movie.year isEqualToString:@"N/A"]){
-        _year.text = movie.year;
+        NSString * temp = @"Release: ";
+        temp = [temp stringByAppendingString:movie.year];
+        _year.text = temp;
     }else{
         _year.text = @"";
     }
@@ -60,10 +62,40 @@
     }else{
         _plot.text = @"";
     }
+    if(![movie.genre isEqualToString:@"N/A"]){
+        NSString * temp = @"Genre: ";
+        temp = [temp stringByAppendingString:movie.genre];
+        _genre.text = temp;
+    }else{
+        _genre.text = @"";
+    }
     if(![movie.language isEqualToString:@"N/A"]){
-        _language.text = movie.language;
+        NSString * temp = @"Language: ";
+        temp = [temp stringByAppendingString:movie.language];
+        _language.text = temp;
     }else{
         _language.text = @"";
+    }
+    if(![movie.runtime isEqualToString:@"N/A"]){
+        NSString * temp = @"Runtime: ";
+        temp = [temp stringByAppendingString:movie.runtime];
+        _duration.text = temp;
+    }else{
+        _duration.text = @"";
+    }
+    if(![movie.actors isEqualToString:@"N/A"]){
+        NSString * temp = @"Actors: ";
+        temp = [temp stringByAppendingString:movie.actors];
+        _actors.text = temp;
+    }else{
+        _actors.text = @"";
+    }
+    if(![movie.imdbRating isEqualToString:@"N/A"]){
+        NSString * temp = @"Rating: ";
+        temp = [temp stringByAppendingString:movie.imdbRating];
+        _rating.text = temp;
+    }else{
+        _rating.text = @"";
     }
     
     _poster.image = movie.image;
