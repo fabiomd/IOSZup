@@ -99,8 +99,8 @@
     }
     
     _poster.image = movie.image;
-    [_poster.layer setBorderColor:[[UIColor whiteColor] CGColor]];
-    [_poster.layer setBorderWidth:2.0];
+    [_scrollView.layer setBorderColor:[[UIColor whiteColor] CGColor]];
+    [_scrollView.layer setBorderWidth:2.0];
 }
 
 @end

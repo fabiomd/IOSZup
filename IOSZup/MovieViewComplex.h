@@ -23,6 +23,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *duration;
 @property (weak, nonatomic) IBOutlet UITextView *actors;
 @property (weak, nonatomic) IBOutlet UILabel *genre;
+@property (weak, nonatomic) IBOutlet UIScrollView *scrollView;
   
 
 -(void) fillWithMovie:(Movie *) movie;

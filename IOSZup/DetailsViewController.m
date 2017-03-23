@@ -8,7 +8,7 @@
 
 #import "DetailsViewController.h"
 
-@interface DetailsViewController ()
+@interface DetailsViewController () <UIScrollViewDelegate>
 
 @end
 
@@ -33,6 +33,14 @@
     _verticalVersion = [tempCell GetViewComplexVertical: _movie];
     _horizontalVersion = [tempCell GetViewComplexHorizontal: _movie];
     
+    ((MovieViewComplex*)(_verticalVersion)).scrollView.minimumZoomScale=1.0;
+    ((MovieViewComplex*)(_verticalVersion)).scrollView.maximumZoomScale=6.0;
+    [((MovieViewComplex*)(_verticalVersion)).scrollView setDelegate:self];
+    
+    ((MovieViewComplex*)(_horizontalVersion)).scrollView.minimumZoomScale=1.0;
+    ((MovieViewComplex*)(_horizontalVersion)).scrollView.maximumZoomScale=6.0;
+    [((MovieViewComplex*)(_horizontalVersion)).scrollView setDelegate:self];
+    
     [_horizontalVersion.layer setBorderColor:[[UIColor whiteColor] CGColor]];
     [_horizontalVersion.layer setBorderWidth:2.0];
     
@@ -51,6 +59,16 @@
         [_verticalVersion setHidden:NO];
     }
 }
+
+- (UIView *)viewForZoomingInScrollView:(UIScrollView *)scrollView
+{
+    if (UIDeviceOrientationIsLandscape([UIDevice currentDevice].orientation)){
+        return ((MovieViewComplex*)(_horizontalVersion)).poster;
+    }else{
+        return ((MovieViewComplex*)(_verticalVersion)).poster;
+    }
+}
+
 
 -(void)setButtonBackgroundImage{
     if([self checkContains: _movie]){
