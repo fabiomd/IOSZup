@@ -11,6 +11,7 @@
 
 @interface MovieView : UIView
 
+@property (strong,nonatomic) NSString * imdbID;
 @property (strong, nonatomic) IBOutlet UIView *View;
 
 @property (strong, nonatomic) IBOutlet UIImageView *poster;

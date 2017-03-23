@@ -36,5 +36,6 @@
         _titleTextField.text = movie.title;
     }
     _poster.image = movie.image;
+    _imdbID = movie.imdbID;
 }
 @end

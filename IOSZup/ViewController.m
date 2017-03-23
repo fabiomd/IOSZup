@@ -178,14 +178,14 @@ static NSInteger selectedIndex = 0;
 
 -(void)carouselDidEndScrollingAnimation:(iCarousel *)carousel{
     NSIndexPath *index = [NSIndexPath indexPathForRow:0 inSection:[_CarouselView currentItemIndex]];
-    [_tableView scrollToRowAtIndexPath:index atScrollPosition:UITableViewScrollPositionMiddle animated:YES];
+    [_tableView selectRowAtIndexPath:index animated:YES scrollPosition:UITableViewScrollPositionMiddle];
 }
-
 
 - (UIView *)carousel:(iCarousel *)carousel viewForItemAtIndex:(NSInteger)index reusingView:(nullable UIView *)view {
 //    allocate a new Cell
     UIView * temp = [_cell GetViewSimplex:[_itens objectAtIndex:index]];
     MovieViewSimplex * tempView = (MovieViewSimplex*)temp;
+    
     //if theres not image, set a default one
     if(!tempView.poster.image){
 //        [tempView.poster setHidden:YES];
