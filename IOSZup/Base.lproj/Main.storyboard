@@ -143,11 +143,36 @@
                     <connections>
                         <outlet property="button" destination="dXO-wT-ib3" id="UBE-WI-2oO"/>
                         <outlet property="displayView" destination="Yy2-iz-Eg8" id="dU7-RY-SQ8"/>
+                        <segue destination="0Ze-tF-j3z" kind="show" identifier="PlayerViewController" id="Due-83-KXJ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yje-Q7-fnt" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2053.6231884057975" y="695.38043478260875"/>
+        </scene>
+        <!--Player-->
+        <scene sceneID="Wd5-KY-wxR">
+            <objects>
+                <viewController id="0Ze-tF-j3z" customClass="PlayerViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="B10-rP-LDh"/>
+                        <viewControllerLayoutGuide type="bottom" id="hMl-ue-eep"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Jih-zd-gWP" customClass="YTPlayerView">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Player" id="dSd-o4-Upr">
+                        <barButtonItem key="backBarButtonItem" title="Retornar" id="Hfa-ow-VCl"/>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="playerView" destination="Jih-zd-gWP" id="zGb-YA-CMU"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="a3t-MR-P2e" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2921.739130434783" y="694.56521739130437"/>
         </scene>
         <!--MINHA BUSCA-->
         <scene sceneID="jEY-SG-lrB">

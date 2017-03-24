@@ -106,7 +106,7 @@
                         </userDefinedRuntimeAttribute>
                     </userDefinedRuntimeAttributes>
                 </view>
-                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Language" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="8vg-Sz-ZRh">
+                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" text="Language" textAlignment="center" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8vg-Sz-ZRh">
                     <rect key="frame" x="176" y="468" width="117" height="71"/>
                     <color key="backgroundColor" red="0.25490196079999999" green="0.25882352939999997" blue="0.25882352939999997" alpha="1" colorSpace="calibratedRGB"/>
                     <constraints>

@@ -9,6 +9,7 @@
 #import "Movie.h"
 #import "Cell.h"
 #import "SaveLoad.h"
+#import "PlayerViewController.h"
 
 @interface DetailsViewController : UIViewController
 

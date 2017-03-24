@@ -50,6 +50,8 @@
     ((MovieViewComplex*)(_horizontalVersion)).scrollView.maximumZoomScale=6.0;
     [((MovieViewComplex*)(_horizontalVersion)).scrollView setDelegate:self];
     
+    [((MovieViewComplex*)(_horizontalVersion)).TrailerButton addTarget:self action:@selector(playMovie:) forControlEvents:UIControlEventTouchDown];
+    
     [_horizontalVersion.layer setBorderColor:[[UIColor whiteColor] CGColor]];
     [_horizontalVersion.layer setBorderWidth:2.0];
     
@@ -67,6 +69,10 @@
         [_horizontalVersion setHidden:YES];
         [_verticalVersion setHidden:NO];
     }
+}
+
+-(void)playMovie:(UIButton *)sender{
+    [self performSegueWithIdentifier:@"PlayerViewController" sender:self];
 }
 
 - (UIView *)viewForZoomingInScrollView:(UIScrollView *)scrollView
@@ -198,14 +204,14 @@
     [self presentViewController:popup animated:YES completion:nil];
 }
 
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
+//In a storyboard-based application, you will often want to do a little preparation before navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+    
+    if ([segue.identifier isEqualToString:@"PlayerViewController"]) {
+        PlayerViewController *temp = (PlayerViewController *) segue.destinationViewController;
+        temp.movieTitle = _movie.imdbID;
+    }
 }
-*/
+
 
 @end

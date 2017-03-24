@@ -8,6 +8,7 @@ target 'IOSZup' do
   pod 'Mantle' , '~> 2.1'
   pod 'MBProgressHUD', '~> 1.0.0'
   pod 'Cosmos', '~> 8.0'
+  pod "youtube-ios-player-helper", "~> 0.1.4"
   # Pods for IOSZup
 
 end

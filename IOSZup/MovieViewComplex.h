@@ -26,6 +26,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *genre;
 @property (weak, nonatomic) IBOutlet CosmosView *starRating;
 @property (weak, nonatomic) IBOutlet UIScrollView *scrollView;
+@property (weak, nonatomic) IBOutlet UIButton *TrailerButton;
 
 -(void) fillWithMovie:(Movie *) movie;
     
