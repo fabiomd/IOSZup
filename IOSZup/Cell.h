@@ -19,5 +19,4 @@
 -(UIView*)GetViewSimplex:(Movie*) movie;
 -(UIView*)GetViewComplexVertical:(Movie*) movie;
 -(UIView*)GetViewComplexHorizontal:(Movie*) movie;
-    
 @end

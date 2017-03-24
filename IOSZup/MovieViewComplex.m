@@ -98,7 +98,7 @@
         _rating.text = @"";
     }
     
-    _poster.image = movie.image;
+    _poster.image = movie.image;    
     [_scrollView.layer setBorderColor:[[UIColor whiteColor] CGColor]];
     [_scrollView.layer setBorderWidth:2.0];
 }

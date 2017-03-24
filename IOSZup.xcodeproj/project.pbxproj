@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		4EB3A27549BAC37B15025CF0 /* libPods-IOSZup.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A834E986DB65CCDD6F4440B7 /* libPods-IOSZup.a */; };
+		78DB5B346F64F764364191EB /* Pods_IOSZup.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 23108A63785FDD47F8A32F10 /* Pods_IOSZup.framework */; };
 		E534FECC1E69FCAA004BB969 /* MovieView.xib in Resources */ = {isa = PBXBuildFile; fileRef = E534FECB1E69FCAA004BB969 /* MovieView.xib */; };
 		E534FED11E69FDED004BB969 /* MovieView.m in Sources */ = {isa = PBXBuildFile; fileRef = E534FED01E69FDED004BB969 /* MovieView.m */; };
 		E5419FBB1E817B540089CE4A /* delete-icon.png in Resources */ = {isa = PBXBuildFile; fileRef = E5419FBA1E817B540089CE4A /* delete-icon.png */; };
@@ -36,8 +36,8 @@
 
 /* Begin PBXFileReference section */
 		0E0AA81D3B1635BA9069E7F9 /* Pods-IOSZup.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-IOSZup.release.xcconfig"; path = "Pods/Target Support Files/Pods-IOSZup/Pods-IOSZup.release.xcconfig"; sourceTree = "<group>"; };
+		23108A63785FDD47F8A32F10 /* Pods_IOSZup.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_IOSZup.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		874232CE4EFA649AC3251DF8 /* Pods-IOSZup.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-IOSZup.debug.xcconfig"; path = "Pods/Target Support Files/Pods-IOSZup/Pods-IOSZup.debug.xcconfig"; sourceTree = "<group>"; };
-		A834E986DB65CCDD6F4440B7 /* libPods-IOSZup.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-IOSZup.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E534FECB1E69FCAA004BB969 /* MovieView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MovieView.xib; sourceTree = "<group>"; };
 		E534FECF1E69FDED004BB969 /* MovieView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MovieView.h; sourceTree = "<group>"; };
 		E534FED01E69FDED004BB969 /* MovieView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MovieView.m; sourceTree = "<group>"; };
@@ -83,7 +83,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4EB3A27549BAC37B15025CF0 /* libPods-IOSZup.a in Frameworks */,
+				78DB5B346F64F764364191EB /* Pods_IOSZup.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -93,7 +93,7 @@
 		7B432979FDF37424B494AC22 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				A834E986DB65CCDD6F4440B7 /* libPods-IOSZup.a */,
+				23108A63785FDD47F8A32F10 /* Pods_IOSZup.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
