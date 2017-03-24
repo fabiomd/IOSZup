@@ -91,11 +91,9 @@
         _actors.text = @"";
     }
     if(![movie.imdbRating isEqualToString:@"N/A"]){
-        NSString * temp = @"Rating: ";
-        temp = [temp stringByAppendingString:movie.imdbRating];
-        _rating.text = temp;
+        [_starRating setRating:([movie.imdbRating doubleValue] * .5)];
     }else{
-        _rating.text = @"";
+        [_starRating setHidden:YES];
     }
     
     _poster.image = movie.image;    

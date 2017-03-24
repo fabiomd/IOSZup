@@ -18,13 +18,6 @@
     [super viewDidLoad];
     
     _saveLoad = [[SaveLoad alloc]init];
-    [_saveLoad Load:^(NSMutableArray * contentLoaded){
-        _itens = contentLoaded;
-        if(!_itens){
-            _itens = [[NSMutableArray alloc] init];
-        }
-        [self setButtonBackgroundImage];
-    }];
     
     Cell * tempCell = [[Cell alloc]init];
     if(!_movie.image){
@@ -32,6 +25,22 @@
     }
     _verticalVersion = [tempCell GetViewComplexVertical: _movie];
     _horizontalVersion = [tempCell GetViewComplexHorizontal: _movie];
+    
+    [_saveLoad Load:^(NSMutableArray * contentLoaded){
+        _itens = contentLoaded;
+        if(!_itens){
+            _itens = [[NSMutableArray alloc] init];
+        }
+        if([self checkContains: _movie]){
+            [((MovieViewComplex*)_horizontalVersion).starRating setUserInteractionEnabled:YES];
+            [((MovieViewComplex*)_verticalVersion).starRating setUserInteractionEnabled:YES];
+            [_button setBackgroundImage:[UIImage imageNamed:@"delete-icon.png"] forState:UIControlStateNormal];
+        }else{
+            [((MovieViewComplex*)_horizontalVersion).starRating setUserInteractionEnabled:NO];
+            [((MovieViewComplex*)_verticalVersion).starRating setUserInteractionEnabled:NO];
+            [_button setBackgroundImage:[UIImage imageNamed:@"save-icon.png"] forState:UIControlStateNormal];
+        }
+    }];
     
     ((MovieViewComplex*)(_verticalVersion)).scrollView.minimumZoomScale=1.0;
     ((MovieViewComplex*)(_verticalVersion)).scrollView.maximumZoomScale=6.0;
@@ -69,7 +78,6 @@
     }
 }
 
-
 -(void)setButtonBackgroundImage{
     if([self checkContains: _movie]){
         [_button setBackgroundImage:[UIImage imageNamed:@"delete-icon.png"] forState:UIControlStateNormal];
@@ -97,9 +105,11 @@
     if (UIDeviceOrientationIsLandscape([UIDevice currentDevice].orientation)){
         [_verticalVersion setHidden:YES];
         [_horizontalVersion setHidden:NO];
+        ((MovieViewComplex*)_horizontalVersion).starRating.rating = ((MovieViewComplex*)_verticalVersion).starRating.rating;
     }else{
         [_horizontalVersion setHidden:YES];
         [_verticalVersion setHidden:NO];
+        ((MovieViewComplex*)_verticalVersion).starRating.rating = ((MovieViewComplex*)_horizontalVersion).starRating.rating;
     }
 }
 
@@ -110,6 +120,29 @@
         }
     }
     return NO;
+}
+
+-(void)viewWillDisappear:(BOOL)animated{
+    [self updateRating];
+    [super viewWillDisappear:animated];
+}
+
+-(void)updateRating{
+    for(int i=0;i<[_itens count];i++){
+        if( [[(Movie*)[_itens objectAtIndex:i] imdbID] isEqualToString:_movie.imdbID]){
+            NSNumber *myRating;
+            if (UIDeviceOrientationIsLandscape([UIDevice currentDevice].orientation)){
+                myRating = [NSNumber numberWithDouble:((MovieViewComplex*)_horizontalVersion).starRating.rating * 2];
+            }else{
+                myRating = [NSNumber numberWithDouble:((MovieViewComplex*)_verticalVersion).starRating.rating * 2];
+            }
+            if(![_movie.imdbRating isEqualToString:[myRating stringValue]]){
+                ((Movie*)[_itens objectAtIndex:i]).imdbRating = [myRating stringValue];
+                [_saveLoad Save:_itens];
+            }
+            break;
+        }
+    }
 }
 
 - (IBAction)ButtonWasPressed:(id)sender {
