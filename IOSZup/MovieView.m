@@ -37,5 +37,11 @@
     }
     _poster.image = movie.image;
     _imdbID = movie.imdbID;
+    if(movie.imdbRating && ![movie.imdbRating isEqualToString:@"N/A"]){
+        [_starRating setRating:([movie.imdbRating doubleValue] * .5)];
+    }else{
+        [_starRating setHidden:YES];
+        _starRatingWidthConstraint.constant = 0;
+    }
 }
 @end

@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <Cosmos/Cosmos-Swift.h>
 #import "Movie.h"
 
 @interface MovieView : UIView
@@ -16,6 +17,8 @@
 
 @property (strong, nonatomic) IBOutlet UIImageView *poster;
 @property (strong, nonatomic) IBOutlet UITextView *titleTextField;
+@property (weak, nonatomic) IBOutlet CosmosView *starRating;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *starRatingWidthConstraint;
 
 -(void) fillWithMovie:(Movie *) movie;
 @end
