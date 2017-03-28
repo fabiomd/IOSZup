@@ -9,10 +9,10 @@
 #import "SearchVideo.h"
 
 @implementation SearchVideo
-//https://www.googleapis.com/youtube/v3/search?part=snippet&q=\jurassic+park+III+Official+trailer&key=AIzaSyCHOu-aYXXxmMfUli-HYHGwxqmwdqCj6sU
-//static NSString * const myAPIKEY = @"AIzaSyCHOu-aYXXxmMfUli-HYHGwxqmwdqCj6sU";
+
 static NSString * const myAPIKEY = @"AIzaSyCHOu-aYXXxmMfUli-HYHGwxqmwdqCj6sU";
 static NSString * const BaseURLString = @"https://www.googleapis.com/youtube/v3/search?part=snippet&q=\\";
+// UCHd_diOoX2PP33hpixxm6tA
 
 -(void)requestByKeyword:(NSString *)keyWord :(int)maxResult results: (void (^)(NSDictionary *) )item error: (void (^)(NSError*)) Error{
     
@@ -26,20 +26,18 @@ static NSString * const BaseURLString = @"https://www.googleapis.com/youtube/v3/
         tempURL = [tempURL stringByAppendingString:@"+"];
         
     }
+//    tempURL = [tempURL stringByAppendingString:@"+trailer"];
     tempURL = [tempURL stringByAppendingString:[subStrings objectAtIndex:i]];
-//    tempURL = [tempURL stringByAppendingString:@"+Official+Trailer+#"];
     tempURL = [tempURL stringByAppendingString:@"&type=video&videoSyndicated=true&chart=mostPopular&movieCategoryId=44&maxResults="];
     tempURL = [tempURL stringByAppendingString:[NSString stringWithFormat:@"%d", maxResult]];
-    tempURL = [tempURL stringByAppendingString:@"&order=relevance&order=viewCount&regionCode=GB&key="];
+    tempURL = [tempURL stringByAppendingString:@"&order=relevance&regionCode=GB&key="];
     tempURL = [tempURL stringByAppendingString:myAPIKEY];
     tempURL = [tempURL stringByAddingPercentEncodingWithAllowedCharacters:NSCharacterSet.URLQueryAllowedCharacterSet];
     
-    NSLog(@"%@",tempURL);
     AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
     [manager GET:tempURL parameters:nil
         progress:^(NSProgress * _Nonnull downloadProgress) {
         }success:^(NSURLSessionDataTask *task, id responseObject) {
-            NSLog(@"%@",responseObject);
             item(responseObject);
         } failure:^(NSURLSessionTask *operation, NSError *error) {
             Error(error);

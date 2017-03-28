@@ -16,7 +16,7 @@
 
 @implementation ViewController
 
-static NSInteger selectedIndex = 0;
+static NSInteger selectedIndex = -1;
 
 -(void)awakeFromNib{
     [super awakeFromNib];
@@ -77,7 +77,9 @@ static NSInteger selectedIndex = 0;
 //    everytime the view appear it load the data and center the carousel
     [super viewDidAppear:animated];
     [self loadData];
-    [_CarouselView scrollToItemAtIndex:[_itens count]/2 animated: YES];
+    if(selectedIndex == -1){
+        [_CarouselView scrollToItemAtIndex:[_itens count]/2 animated: YES];
+    }
 }
 
 

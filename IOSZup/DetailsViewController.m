@@ -11,12 +11,13 @@
 @interface DetailsViewController () <UIScrollViewDelegate>
 
 @end
+static BOOL available = YES;
 static NSString* movieYTId=@"";
 @implementation DetailsViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
+    available = YES;
     _saveLoad = [[SaveLoad alloc]init];
     
     Cell * tempCell = [[Cell alloc]init];
@@ -73,20 +74,23 @@ static NSString* movieYTId=@"";
 }
 
 -(void)playMovie:(UIButton *)sender{
-    MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
-    hud.userInteractionEnabled = NO;
-    hud.label.text = @"Buscando";
-    SearchVideo * searchVideo = [[SearchVideo alloc] init];
-    [searchVideo requestByKeyword:_movie.title :1 results:^(NSDictionary* results){
-//        movieYTId = [[[results objectAtIndex:0] valueForKey:@"id"] valueForKey:@"videoId"];
-        movieYTId = [[[results valueForKey:@"items"] valueForKey:@"id"] valueForKey:@"videoId"];
-        [hud hideAnimated:YES];
-        [self performSegueWithIdentifier:@"PlayerViewController" sender:self];
-    } error:^(NSError* error){
-        dispatch_async(dispatch_get_main_queue(), ^ {
-            [self ConnectionError];
-        });
-    }];
+    if(available){
+        available = NO;
+        MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+        hud.userInteractionEnabled = NO;
+        hud.label.text = @"Buscando";
+        SearchVideo * searchVideo = [[SearchVideo alloc] init];
+        [searchVideo requestByKeyword:_movie.title :1 results:^(NSDictionary* results){
+            movieYTId = [[[results valueForKey:@"items"] valueForKey:@"id"] valueForKey:@"videoId"];
+            [hud hideAnimated:YES];
+            available = YES;
+            [self performSegueWithIdentifier:@"PlayerViewController" sender:self];
+        } error:^(NSError* error){
+            dispatch_async(dispatch_get_main_queue(), ^ {
+                [self ConnectionError];
+            });
+        }];
+    }
 }
 
 - (UIView *)viewForZoomingInScrollView:(UIScrollView *)scrollView
