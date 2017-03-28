@@ -80,7 +80,12 @@ static NSString* movieYTId=@"";
         hud.userInteractionEnabled = NO;
         hud.label.text = @"Buscando";
         SearchVideo * searchVideo = [[SearchVideo alloc] init];
-        [searchVideo requestByKeyword:_movie.title :1 results:^(NSDictionary* results){
+        NSString * tempKey = @"";
+        tempKey = [tempKey stringByAppendingString:_movie.title];
+        tempKey = [tempKey stringByAppendingString:@" "];
+        tempKey = [tempKey stringByAppendingString:_movie.year];
+        
+        [searchVideo requestByKeyword:tempKey :1 results:^(NSDictionary* results){
             movieYTId = [[[results valueForKey:@"items"] valueForKey:@"id"] valueForKey:@"videoId"];
             [hud hideAnimated:YES];
             available = YES;

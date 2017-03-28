@@ -11,26 +11,24 @@
 @implementation SearchVideo
 
 static NSString * const myAPIKEY = @"AIzaSyCHOu-aYXXxmMfUli-HYHGwxqmwdqCj6sU";
-static NSString * const BaseURLString = @"https://www.googleapis.com/youtube/v3/search?part=snippet&q=\\";
+static NSString * const BaseURLString = @"https://www.googleapis.com/youtube/v3/search?part=snippet&maxResults=";
 // UCHd_diOoX2PP33hpixxm6tA
 
 -(void)requestByKeyword:(NSString *)keyWord :(int)maxResult results: (void (^)(NSDictionary *) )item error: (void (^)(NSError*)) Error{
     
 
     NSString *tempURL = @"";
-    NSArray * subStrings = [keyWord componentsSeparatedByString:@" "];
     tempURL = [tempURL stringByAppendingString:BaseURLString];
+    tempURL = [tempURL stringByAppendingString:[NSString stringWithFormat:@"%d&q=", maxResult]];
+    NSArray * subStrings = [keyWord componentsSeparatedByString:@" "];
     int i=0;
     for(i=0;i<[subStrings count] - 1;i++){
         tempURL = [tempURL stringByAppendingString:[subStrings objectAtIndex:i]];
         tempURL = [tempURL stringByAppendingString:@"+"];
         
     }
-//    tempURL = [tempURL stringByAppendingString:@"+trailer"];
     tempURL = [tempURL stringByAppendingString:[subStrings objectAtIndex:i]];
-    tempURL = [tempURL stringByAppendingString:@"&type=video&videoSyndicated=true&chart=mostPopular&movieCategoryId=44&maxResults="];
-    tempURL = [tempURL stringByAppendingString:[NSString stringWithFormat:@"%d", maxResult]];
-    tempURL = [tempURL stringByAppendingString:@"&order=relevance&regionCode=GB&key="];
+    tempURL = [tempURL stringByAppendingString:@"&regionCode=GB&type=video&videoCategoryId=44&key="];
     tempURL = [tempURL stringByAppendingString:myAPIKEY];
     tempURL = [tempURL stringByAddingPercentEncodingWithAllowedCharacters:NSCharacterSet.URLQueryAllowedCharacterSet];
     
