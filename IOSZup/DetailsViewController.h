@@ -10,6 +10,7 @@
 #import "Cell.h"
 #import "SaveLoad.h"
 #import "PlayerViewController.h"
+#import "SearchVideo.h"
 
 @interface DetailsViewController : UIViewController
 

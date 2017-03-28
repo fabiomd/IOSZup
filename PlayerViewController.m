@@ -14,18 +14,39 @@
 
 @implementation PlayerViewController
 
-static NSString * const BaseURLString = @"https://www.youtube.com/results?search_query=";
-//static NSString * const BaseURLString = @"GET https://www.googleapis.com/youtube/v3/videos/s=";
+//static NSString * const myAPIKEY = @"AIzaSyCHOu-aYXXxmMfUli-HYHGwxqmwdqCj6sU";
+//static NSString * const BaseURLString = @"https://www.googleapis.com/youtube/v3/search?part=snippet&q=\\";
+//static NSString * const temp = @"http://gdata.youtube.com/feeds/api/videos?q=kung+fu+panda-trailer&start-index=1&max-results=1&v=2&alt=json&hd";
+//static NSString * const BaseURLString = @"http://gdata.youtube.com/feeds/api/videos?q=";
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    [self.playerView loadWithVideoId:@"http://www.imdb.com/title/tt1306980/"];
-//    [self requestByName:_movieTitle itens:^(NSMutableArray * movie) {
-//        [_playerView loadWithVideoId:_movieTitle];
-//    }error:^(NSError * error){
-//    }];
-//    [self.playerView loadWithVideoId:@"M7lc1UVf-VE"];
-    // Do any additional setup after loading the view.
+    [_playerView loadWithVideoId:_movieID];
+    
+//    NSString *tempURL = @"";
+//    NSArray * subStrings = [_movieTitle componentsSeparatedByString:@" "];
+//    tempURL = [tempURL stringByAppendingString:BaseURLString];
+//    int i=0;
+//    for(i=0;i<[subStrings count] - 1;i++){
+//        tempURL = [tempURL stringByAppendingString:[subStrings objectAtIndex:i]];
+//        tempURL = [tempURL stringByAppendingString:@"+"];
+//
+//    }
+//    tempURL = [tempURL stringByAppendingString:[subStrings objectAtIndex:i]];
+//    tempURL = [tempURL stringByAppendingString:@"+trailer"];
+//    tempURL = [tempURL stringByAppendingString:@"&type=video&videoSyndicated=true&chart=mostPopular&maxResults=1&safeSearch=strict&order=relevance&order=viewCount&type=video&relevanceLanguage=en&regionCode=GB&key="];
+//    tempURL = [tempURL stringByAppendingString:myAPIKEY];
+//    tempURL = [tempURL stringByAddingPercentEncodingWithAllowedCharacters:NSCharacterSet.URLQueryAllowedCharacterSet];
+//   
+//    AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
+//    [manager GET:tempURL parameters:nil
+//        progress:^(NSProgress * _Nonnull downloadProgress) {
+//        }success:^(NSURLSessionDataTask *task, id responseObject) {
+//            NSString * ID = [[[responseObject valueForKey:@"items"] valueForKey:@"id"] valueForKey:@"videoId"];
+//            [_playerView loadWithVideoId:ID];
+//        } failure:^(NSURLSessionTask *operation, NSError *error) {
+//        }];
+    
 }
 
 - (void)didReceiveMemoryWarning {
@@ -33,45 +54,6 @@ static NSString * const BaseURLString = @"https://www.youtube.com/results?search
     // Dispose of any resources that can be recreated.
 }
 
--(void)requestByName:(NSString *)name itens: (void (^)(NSMutableArray *) )itens error: (void (^)(NSError*)) Error{
-    
-    //    Creating manager for comunication with server
-    AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
-    
-    //    This part will create the requested url, based on name
-    NSString * tempURL = @"";
-    tempURL = [tempURL stringByAppendingString:BaseURLString];
-    NSArray * subStrings = [name componentsSeparatedByString:@" "];
-    int i=0;
-    for(i=0;i<[subStrings count] - 1;i++){
-        tempURL = [tempURL stringByAppendingString:[subStrings objectAtIndex:i]];
-        tempURL = [tempURL stringByAppendingString:@"+"];
-        
-    }
-    tempURL = [tempURL stringByAppendingString:[subStrings objectAtIndex:i]];
-    tempURL = [tempURL stringByAppendingString:@"+trailer"];
-    NSMutableArray * movies = [[NSMutableArray alloc]init];
-    
-    [manager GET:tempURL parameters:nil
-        progress:^(NSProgress * _Nonnull downloadProgress) {
-        }success:^(NSURLSessionDataTask *task, id responseObject) {
-            
-            //        Split the JSON response
-            NSMutableArray *tempArray = [responseObject objectForKey:@"Search"];
-            
-            //        for each response create a movie and fill it
-            for(NSDictionary * tempDic in tempArray){
-                NSError *error = nil;
-                Movie *tempMovie = [MTLJSONAdapter modelOfClass:[Movie class] fromJSONDictionary:tempDic error:&error];
-                [tempMovie downloadImage];
-                [movies addObject:tempMovie];
-            }
-            itens(movies);
-            
-        } failure:^(NSURLSessionTask *operation, NSError *error) {
-            Error(error);
-        }];
-}
 /*
 #pragma mark - Navigation
 

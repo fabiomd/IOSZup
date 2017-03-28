@@ -159,7 +159,6 @@ static int nextPage;
             dispatch_async(dispatch_get_main_queue(), ^ {
                 [self ConnectionError];
             });
-//            [self ConnectionError];
         }];
     }
 }

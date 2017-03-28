@@ -11,7 +11,7 @@
 @interface DetailsViewController () <UIScrollViewDelegate>
 
 @end
-
+static NSString* movieYTId=@"";
 @implementation DetailsViewController
 
 - (void)viewDidLoad {
@@ -51,6 +51,7 @@
     [((MovieViewComplex*)(_horizontalVersion)).scrollView setDelegate:self];
     
     [((MovieViewComplex*)(_horizontalVersion)).TrailerButton addTarget:self action:@selector(playMovie:) forControlEvents:UIControlEventTouchDown];
+    [((MovieViewComplex*)(_verticalVersion)).TrailerButton addTarget:self action:@selector(playMovie:) forControlEvents:UIControlEventTouchDown];
     
     [_horizontalVersion.layer setBorderColor:[[UIColor whiteColor] CGColor]];
     [_horizontalVersion.layer setBorderWidth:2.0];
@@ -72,7 +73,20 @@
 }
 
 -(void)playMovie:(UIButton *)sender{
-    [self performSegueWithIdentifier:@"PlayerViewController" sender:self];
+    MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+    hud.userInteractionEnabled = NO;
+    hud.label.text = @"Buscando";
+    SearchVideo * searchVideo = [[SearchVideo alloc] init];
+    [searchVideo requestByKeyword:_movie.title :1 results:^(NSDictionary* results){
+//        movieYTId = [[[results objectAtIndex:0] valueForKey:@"id"] valueForKey:@"videoId"];
+        movieYTId = [[[results valueForKey:@"items"] valueForKey:@"id"] valueForKey:@"videoId"];
+        [hud hideAnimated:YES];
+        [self performSegueWithIdentifier:@"PlayerViewController" sender:self];
+    } error:^(NSError* error){
+        dispatch_async(dispatch_get_main_queue(), ^ {
+            [self ConnectionError];
+        });
+    }];
 }
 
 - (UIView *)viewForZoomingInScrollView:(UIScrollView *)scrollView
@@ -198,6 +212,17 @@
     }
 }
 
+-(void)ConnectionError{
+    UIAlertController * alert = [UIAlertController alertControllerWithTitle:@"" message:@"Não foi possivel se conectar ao servidor! \n Verifique sua conexão"preferredStyle:UIAlertControllerStyleAlert];
+    UIAlertAction* okButton = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:^(UIAlertAction * action)
+                               {
+                                   UINavigationController * tempNav = [self navigationController];
+                                   [tempNav popToRootViewControllerAnimated:true];
+                               }];
+    [alert addAction:okButton];
+    [self presentViewController:alert animated:YES completion:nil];
+}
+
 -(void)POPUP:(NSString*)text button:(UIAlertAction*) button{
     UIAlertController * popup=[UIAlertController alertControllerWithTitle:@"" message:text preferredStyle:UIAlertControllerStyleAlert];
     [popup addAction:button];
@@ -209,7 +234,7 @@
     
     if ([segue.identifier isEqualToString:@"PlayerViewController"]) {
         PlayerViewController *temp = (PlayerViewController *) segue.destinationViewController;
-        temp.movieTitle = _movie.imdbID;
+        temp.movieID = movieYTId;
     }
 }
 
