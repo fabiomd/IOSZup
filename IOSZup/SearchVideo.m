@@ -28,7 +28,8 @@ static NSString * const BaseURLString = @"https://www.googleapis.com/youtube/v3/
         
     }
     tempURL = [tempURL stringByAppendingString:[subStrings objectAtIndex:i]];
-    tempURL = [tempURL stringByAppendingString:@"&regionCode=GB&type=video&videoCategoryId=44&key="];
+    tempURL = [tempURL stringByAppendingString:@"+trailer"];
+    tempURL = [tempURL stringByAppendingString:@"&regionCode=GB&type=video&key="];
     tempURL = [tempURL stringByAppendingString:myAPIKEY];
     tempURL = [tempURL stringByAddingPercentEncodingWithAllowedCharacters:NSCharacterSet.URLQueryAllowedCharacterSet];
     
