@@ -23,7 +23,16 @@ static NSInteger selectedIndex = -1;
     _itens = [[NSMutableArray alloc] init];
 }
 
-
+-(NSMutableArray*)ordernate:(NSMutableArray*)list{
+    for(int i=0;i<[list count];i++){
+        for(int j=0;j<[list count];j++){
+            if( [[(Movie*)[list objectAtIndex:i] title] compare:[(Movie*)[list objectAtIndex:j] title]] < 0){
+                [list exchangeObjectAtIndex:j withObjectAtIndex:i];
+            }
+        }
+    }
+    return list;
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];

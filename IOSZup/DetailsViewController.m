@@ -206,6 +206,14 @@ static NSString* movieYTId=@"";
     {
         UIAlertController * alert;
         alert=[UIAlertController alertControllerWithTitle:@"" message:@"Filme salvo!"preferredStyle:UIAlertControllerStyleAlert];
+        for(int i=0;i<[_itens count];i++){
+            if( [[(Movie*)[_itens objectAtIndex:i] title] compare:_movie.title] > 0){
+                [_itens insertObject:_movie atIndex:i];
+                break;
+            }
+        }
+
+//        [_itens insertObject:_movie atIndex:<#(NSUInteger)#>]
         [_itens addObject:_movie];
         [_saveLoad Save:_itens];
         UIAlertAction* OKButton = [UIAlertAction
