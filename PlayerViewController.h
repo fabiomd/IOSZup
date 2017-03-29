@@ -11,7 +11,7 @@
 
 @interface PlayerViewController : UIViewController
 
-@property(nonatomic, strong) IBOutlet YTPlayerView *playerView;
+@property(nonatomic,strong) IBOutlet YTPlayerView *playerView;
 @property(nonatomic,strong) NSString * movieID;
 
 @end
