@@ -18,6 +18,7 @@
 		E558E4361E89883200BEF57E /* SearchVideo.m in Sources */ = {isa = PBXBuildFile; fileRef = E558E4351E89883200BEF57E /* SearchVideo.m */; };
 		E55A552D1E7700EC00484A6B /* SaveLoad.m in Sources */ = {isa = PBXBuildFile; fileRef = E55A552C1E7700EC00484A6B /* SaveLoad.m */; };
 		E55C84781E7B286C00CA5981 /* MovieViewComplex2.xib in Resources */ = {isa = PBXBuildFile; fileRef = E55C84771E7B286C00CA5981 /* MovieViewComplex2.xib */; };
+		E55FBC7C1E8D8BBB00991B94 /* iCarousel.m in Sources */ = {isa = PBXBuildFile; fileRef = E55FBC7B1E8D8BBB00991B94 /* iCarousel.m */; };
 		E566913F1E859EE4007F9CC6 /* PlayerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E566913E1E859EE4007F9CC6 /* PlayerViewController.m */; };
 		E56D25F61E71AF7700F16AC9 /* not_found.jpg in Resources */ = {isa = PBXBuildFile; fileRef = E56D25F51E71AF7700F16AC9 /* not_found.jpg */; };
 		E57595C61E7857BC003EE397 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E57595C41E7857BC003EE397 /* Main.storyboard */; };
@@ -31,7 +32,6 @@
 		E5AA87B01E68797B0078A292 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = E5AA87AF1E68797B0078A292 /* AppDelegate.m */; };
 		E5AA87B91E68797B0078A292 /* IOSZup.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = E5AA87B71E68797B0078A292 /* IOSZup.xcdatamodeld */; };
 		E5AA87BB1E68797B0078A292 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E5AA87BA1E68797B0078A292 /* Assets.xcassets */; };
-		E5AA87CA1E6887370078A292 /* iCarousel.m in Sources */ = {isa = PBXBuildFile; fileRef = E5AA87C91E6887370078A292 /* iCarousel.m */; };
 		E5AA87D81E68A6460078A292 /* Cell.m in Sources */ = {isa = PBXBuildFile; fileRef = E5AA87D71E68A6460078A292 /* Cell.m */; };
 		E5AA87DD1E68B1E30078A292 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E5AA87B21E68797B0078A292 /* ViewController.m */; };
 /* End PBXBuildFile section */
@@ -55,6 +55,8 @@
 		E55A552B1E7700EC00484A6B /* SaveLoad.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SaveLoad.h; path = IOSZup/SaveLoad.h; sourceTree = "<group>"; };
 		E55A552C1E7700EC00484A6B /* SaveLoad.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SaveLoad.m; path = IOSZup/SaveLoad.m; sourceTree = "<group>"; };
 		E55C84771E7B286C00CA5981 /* MovieViewComplex2.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MovieViewComplex2.xib; sourceTree = "<group>"; };
+		E55FBC7A1E8D8BBB00991B94 /* iCarousel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = iCarousel.h; sourceTree = "<group>"; };
+		E55FBC7B1E8D8BBB00991B94 /* iCarousel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = iCarousel.m; sourceTree = "<group>"; };
 		E566913D1E859EE4007F9CC6 /* PlayerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlayerViewController.h; sourceTree = "<group>"; };
 		E566913E1E859EE4007F9CC6 /* PlayerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PlayerViewController.m; sourceTree = "<group>"; };
 		E56D25F51E71AF7700F16AC9 /* not_found.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = not_found.jpg; sourceTree = "<group>"; };
@@ -78,8 +80,6 @@
 		E5AA87B81E68797B0078A292 /* IOSZup.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = IOSZup.xcdatamodel; sourceTree = "<group>"; };
 		E5AA87BA1E68797B0078A292 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E5AA87BF1E68797B0078A292 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		E5AA87C81E6887370078A292 /* iCarousel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = iCarousel.h; path = ../../../../Downloads/iCarousel.h; sourceTree = "<group>"; };
-		E5AA87C91E6887370078A292 /* iCarousel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = iCarousel.m; path = ../../../../Downloads/iCarousel.m; sourceTree = "<group>"; };
 		E5AA87D71E68A6460078A292 /* Cell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Cell.m; sourceTree = "<group>"; };
 		E5AA87D91E68A65F0078A292 /* Cell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Cell.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -215,6 +215,8 @@
 		E5AA87AA1E68797B0078A292 /* IOSZup */ = {
 			isa = PBXGroup;
 			children = (
+				E55FBC7A1E8D8BBB00991B94 /* iCarousel.h */,
+				E55FBC7B1E8D8BBB00991B94 /* iCarousel.m */,
 				E558E4321E89835F00BEF57E /* play-icon.png */,
 				E5419FBA1E817B540089CE4A /* delete-icon.png */,
 				E5901F3C1E803BAF00F86879 /* save-icon.png */,
@@ -226,8 +228,6 @@
 				E557E4D01E7068D800AB59FF /* Connection */,
 				E557E4CF1E70612100AB59FF /* Definitions */,
 				E557E4CE1E7060E500AB59FF /* Views */,
-				E5AA87C81E6887370078A292 /* iCarousel.h */,
-				E5AA87C91E6887370078A292 /* iCarousel.m */,
 				E5AA87AE1E68797B0078A292 /* AppDelegate.h */,
 				E5AA87AF1E68797B0078A292 /* AppDelegate.m */,
 				E5AA87BA1E68797B0078A292 /* Assets.xcassets */,
@@ -383,7 +383,6 @@
 				E57DC6A11E6DB66A0052AE9D /* Movie.m in Sources */,
 				E58098211E73196F00556A94 /* MovieViewComplex.m in Sources */,
 				E558E4361E89883200BEF57E /* SearchVideo.m in Sources */,
-				E5AA87CA1E6887370078A292 /* iCarousel.m in Sources */,
 				E5AA87B91E68797B0078A292 /* IOSZup.xcdatamodeld in Sources */,
 				E5581F551E82C9AD004129B5 /* DetailsViewController.m in Sources */,
 				E57DC6A41E6DD8A70052AE9D /* Connection.m in Sources */,
@@ -391,6 +390,7 @@
 				E5AA87B01E68797B0078A292 /* AppDelegate.m in Sources */,
 				E55665461E798FAD00C0A6AF /* MovieViewSimplex.m in Sources */,
 				E5AA87AD1E68797B0078A292 /* main.m in Sources */,
+				E55FBC7C1E8D8BBB00991B94 /* iCarousel.m in Sources */,
 				E5AA87D81E68A6460078A292 /* Cell.m in Sources */,
 				E566913F1E859EE4007F9CC6 /* PlayerViewController.m in Sources */,
 			);
@@ -505,6 +505,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 874232CE4EFA649AC3251DF8 /* Pods-IOSZup.debug.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEVELOPMENT_TEAM = 39H6XWV852;
@@ -519,6 +520,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 0E0AA81D3B1635BA9069E7F9 /* Pods-IOSZup.release.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEVELOPMENT_TEAM = 39H6XWV852;
