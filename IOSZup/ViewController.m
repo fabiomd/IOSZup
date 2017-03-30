@@ -129,6 +129,9 @@ static NSInteger selectedIndex = -1;
 //    create a cell
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Cell" forIndexPath:indexPath];
+    UIView *bgColorView = [[UIView alloc] init];
+    bgColorView.backgroundColor = [UIColor lightGrayColor];
+    [cell setSelectedBackgroundView:bgColorView];
     
     NSArray *viewsToRemove = [cell.contentView subviews];
     for (UIView *v in viewsToRemove) {
