@@ -39,9 +39,12 @@
     _imdbID = movie.imdbID;
     if(movie.imdbRating && ![movie.imdbRating isEqualToString:@"N/A"]){
         [_starRating setRating:([movie.imdbRating doubleValue] * .5)];
+        _rating.text = [NSString stringWithFormat:@"%.1f",([movie.imdbRating doubleValue] * .5)];
     }else{
         [_starRating setHidden:YES];
+        [_rating setHidden:YES];
         _starRatingWidthConstraint.constant = 0;
+        _ratingWidthConstraint.constant = 0;
     }
 }
 @end

@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -32,8 +33,18 @@
                             <fontDescription key="fontDescription" type="boldSystem" pointSize="14"/>
                             <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                         </textView>
-                        <view userInteractionEnabled="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="RsQ-2B-PAl" customClass="CosmosView" customModule="Cosmos">
-                            <rect key="frame" x="175" y="31" width="130" height="20"/>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Rating" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rzo-Y6-7E9">
+                            <rect key="frame" x="175" y="55" width="122" height="19"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="19" id="3Qf-Ld-SXa"/>
+                                <constraint firstAttribute="width" constant="122" id="eZJ-NX-BMD"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                            <color key="textColor" red="1" green="0.80780382100000003" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <view userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="RsQ-2B-PAl" customClass="CosmosView" customModule="Cosmos">
+                            <rect key="frame" x="175" y="19" width="130" height="20"/>
                             <color key="backgroundColor" red="0.25490196079999999" green="0.25882352939999997" blue="0.25882352939999997" alpha="1" colorSpace="calibratedRGB"/>
                             <constraints>
                                 <constraint firstAttribute="width" constant="130" id="VVn-aE-6LY"/>
@@ -67,10 +78,13 @@
                     <constraints>
                         <constraint firstAttribute="trailing" secondItem="RsQ-2B-PAl" secondAttribute="trailing" id="Avp-ex-eM0"/>
                         <constraint firstAttribute="bottom" secondItem="N9v-Sq-jhL" secondAttribute="bottom" id="DpL-w8-led"/>
+                        <constraint firstItem="rzo-Y6-7E9" firstAttribute="leading" secondItem="RsQ-2B-PAl" secondAttribute="leading" id="U1d-WZ-9ZO"/>
                         <constraint firstItem="N9v-Sq-jhL" firstAttribute="top" secondItem="ej8-Px-I2i" secondAttribute="top" id="b0O-Fq-AkW"/>
-                        <constraint firstItem="N9v-Sq-jhL" firstAttribute="centerY" secondItem="RsQ-2B-PAl" secondAttribute="centerY" id="c3e-bJ-6ps"/>
+                        <constraint firstItem="N9v-Sq-jhL" firstAttribute="centerY" secondItem="RsQ-2B-PAl" secondAttribute="centerY" constant="12" id="c3e-bJ-6ps"/>
                         <constraint firstItem="RsQ-2B-PAl" firstAttribute="leading" secondItem="N9v-Sq-jhL" secondAttribute="trailing" constant="2" id="eHd-PQ-68C"/>
+                        <constraint firstItem="rzo-Y6-7E9" firstAttribute="trailing" secondItem="ej8-Px-I2i" secondAttribute="trailingMargin" id="imd-ft-Vhv"/>
                         <constraint firstItem="N9v-Sq-jhL" firstAttribute="leading" secondItem="ej8-Px-I2i" secondAttribute="leading" constant="-42" id="mkP-VL-Aqv"/>
+                        <constraint firstItem="rzo-Y6-7E9" firstAttribute="bottom" secondItem="ej8-Px-I2i" secondAttribute="bottomMargin" id="sC6-h3-AtA"/>
                     </constraints>
                 </view>
             </subviews>
@@ -88,8 +102,9 @@
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <connections>
                 <outlet property="Poster" destination="ed1-u1-797" id="jqv-Jb-ZZw"/>
+                <outlet property="rating" destination="rzo-Y6-7E9" id="WFA-aM-2EF"/>
                 <outlet property="starRating" destination="RsQ-2B-PAl" id="IqC-Da-MBK"/>
-                <outlet property="starRatingWidthConstraint" destination="VVn-aE-6LY" id="3lc-uY-zS9"/>
+                <outlet property="starRatingWidthConstraint" destination="eZJ-NX-BMD" id="Ddc-cy-L67"/>
                 <outlet property="titleTextField" destination="N9v-Sq-jhL" id="ZTu-CW-Szh"/>
             </connections>
             <point key="canvasLocation" x="93" y="-265"/>

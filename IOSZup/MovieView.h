@@ -18,7 +18,9 @@
 @property (strong, nonatomic) IBOutlet UIImageView *poster;
 @property (strong, nonatomic) IBOutlet UITextView *titleTextField;
 @property (weak, nonatomic) IBOutlet CosmosView *starRating;
+@property (weak, nonatomic) IBOutlet UILabel *rating;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *starRatingWidthConstraint;
 
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *ratingWidthConstraint;
 -(void) fillWithMovie:(Movie *) movie;
 @end
